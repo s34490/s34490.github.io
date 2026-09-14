@@ -1,150 +1,361 @@
-<!-- =========================
-     แถบเมนู
-========================= -->
-<nav class="navbar">
-  <div class="nav-logo">🧸 My Portfolio</div>
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <div class="nav-menu">
-    <a href="#home">🏠 หน้าแรก</a>
-    <a href="#about">🌷 เกี่ยวกับฉัน</a>
-    <a href="#activities">🎀 กิจกรรม</a>
-    <a href="#works">🏆 ผลงาน</a>
-  </div>
-</nav>
+    <title>Portfolio | Thanachanok</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Arial", sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #eaf7ff, #fff0f8);
+            color: #555;
+            min-height: 100vh;
+        }
+
+        /* =========================
+           แถบเมนู
+        ========================= */
+        nav {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.92);
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 3px 15px rgba(180, 150, 200, 0.15);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #78bce8;
+        }
+
+        .menu {
+            display: flex;
+            gap: 12px;
+            list-style: none;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #777;
+            font-size: 16px;
+            padding: 9px 15px;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+
+        .menu a:hover {
+            background: #ffd6e9;
+            color: #e879a8;
+        }
+
+        /* =========================
+           หน้าแรก
+        ========================= */
+        .home {
+            min-height: calc(100vh - 70px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 50px 8%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1100px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+        }
+
+        /* ข้อความ */
+        .text {
+            flex: 1;
+        }
+
+        .hello {
+            color: #e889b1;
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            font-size: 48px;
+            color: #6aaed6;
+            margin-bottom: 15px;
+            line-height: 1.25;
+        }
+
+        .welcome {
+            font-size: 25px;
+            color: #e47fa9;
+            font-weight: bold;
+            margin-bottom: 18px;
+        }
+
+        .description {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #777;
+            max-width: 600px;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 13px 27px;
+            background: linear-gradient(135deg, #8ac9ed, #f2a6c8);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            box-shadow: 0 6px 15px rgba(220, 150, 190, 0.25);
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            transform: translateY(-4px);
+        }
+
+        /* =========================
+           รูปโปรไฟล์
+        ========================= */
+        .profile-area {
+            flex: 0 0 340px;
+            text-align: center;
+            position: relative;
+        }
+
+        .profile-box {
+            width: 290px;
+            height: 290px;
+            margin: auto;
+            border-radius: 50%;
+            padding: 10px;
+            background: linear-gradient(135deg, #8ed0f2, #f6aacb);
+            box-shadow: 0 12px 30px rgba(180, 150, 200, 0.25);
+        }
+
+        .profile-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 7px solid white;
+        }
+
+        .profile-name {
+            margin-top: 18px;
+            color: #6faed3;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* =========================
+           กราฟิกตกแต่ง
+        ========================= */
+        .decor {
+            position: absolute;
+            font-size: 38px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .star1 {
+            top: 12%;
+            left: 7%;
+        }
+
+        .heart1 {
+            top: 22%;
+            right: 8%;
+            animation-delay: 0.5s;
+        }
+
+        .flower1 {
+            bottom: 15%;
+            left: 12%;
+            animation-delay: 1s;
+        }
+
+        .bear1 {
+            bottom: 8%;
+            right: 9%;
+            font-size: 58px;
+            animation-delay: 1.5s;
+        }
+
+        .cloud1 {
+            top: 10%;
+            right: 28%;
+            font-size: 45px;
+            animation-delay: 0.8s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+
+        /* =========================
+           มือถือ
+        ========================= */
+        @media (max-width: 800px) {
+
+            nav {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .menu {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .home {
+                padding: 45px 6%;
+            }
+
+            .container {
+                flex-direction: column-reverse;
+                text-align: center;
+                gap: 35px;
+            }
+
+            h1 {
+                font-size: 38px;
+            }
+
+            .welcome {
+                font-size: 21px;
+            }
+
+            .description {
+                font-size: 16px;
+            }
+
+            .profile-area {
+                flex: none;
+            }
+
+            .profile-box {
+                width: 230px;
+                height: 230px;
+            }
+
+            .decor {
+                font-size: 28px;
+            }
+
+            .bear1 {
+                font-size: 42px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         แถบเมนู
+    ========================= -->
+    <nav>
+        <div class="logo">🎀 My Portfolio 🧸</div>
+
+        <ul class="menu">
+            <li><a href="index.html">🏠 หน้าแรก</a></li>
+            <li><a href="about.html">👩🏻‍🎓 เกี่ยวกับฉัน</a></li>
+            <li><a href="activities.html">🌷 กิจกรรม</a></li>
+            <li><a href="skills.html">✨ ความสามารถ</a></li>
+            <li><a href="contact.html">💌 ติดต่อ</a></li>
+        </ul>
+    </nav>
 
 
-<!-- =========================
-     หน้าแรก : Profile / Welcome
-========================= -->
-<section id="home" class="home">
+    <!-- =========================
+         หน้าแรก
+    ========================= -->
+    <section class="home">
 
-  <div class="decor">✦ 💗 ✦ 🎀 ✦ 🍯 ✦</div>
-
-  <div class="home-content">
-
-    <!-- 📸 รูปโปรไฟล์ -->
-    <div class="profile-photo">
-      <img src="profile.jpg" alt="รูปโปรไฟล์ของฉัน">
-    </div>
-
-    <div class="bear">🧸</div>
-
-    <p class="welcome">
-      ✨ WELCOME TO MY PORTFOLIO ✨
-    </p>
-
-    <h1>
-      ยินดีต้อนรับสู่<br>
-      <span>เว็บไซต์ Portfolio ของฉัน</span> 💕
-    </h1>
-
-    <p class="intro">
-      เรามาทำความรู้จักกันให้มากขึ้นกันเถอะ! 🌷
-    </p>
-
-    <div class="cute-icons">
-      🌸 💗 🎀 🧸 🍯 ☁️
-    </div>
-
-    <a href="#about" class="start-btn">
-      💌 ทำความรู้จักฉัน
-    </a>
-
-  </div>
-
-  <div class="floating f1">💗</div>
-  <div class="floating f2">🌸</div>
-  <div class="floating f3">🎀</div>
-  <div class="floating f4">✨</div>
-
-</section>
+        <!-- กราฟิกตกแต่ง -->
+        <div class="decor star1">⭐</div>
+        <div class="decor heart1">💗</div>
+        <div class="decor flower1">🌷</div>
+        <div class="decor bear1">🧸</div>
+        <div class="decor cloud1">☁️</div>
 
 
-<style>
+        <div class="container">
 
-  /* =========================
-     แถบเมนู
-  ========================= */
+            <!-- ข้อความ -->
+            <div class="text">
 
-  .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
+                <div class="hello">
+                    🩵 Hello! Welcome to my Portfolio
+                </div>
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+                <h1>
+                    ยินดีต้อนรับสู่<br>
+                    เว็บไซต์ Portfolio ของฉัน 💕
+                </h1>
 
-    padding: 15px 40px;
+                <div class="welcome">
+                    🌷 เรามาทำความรู้จักกันให้มากขึ้นกันเถอะ! 🌷
+                </div>
 
-    background: rgba(255,255,255,0.92);
-    backdrop-filter: blur(10px);
+                <p class="description">
+                    เว็บไซต์นี้รวบรวมเรื่องราวเกี่ยวกับตัวฉัน
+                    ประวัติการศึกษา ความสามารถ กิจกรรม
+                    และประสบการณ์ต่าง ๆ ที่ได้เรียนรู้และภาคภูมิใจ
+                    ✨
+                </p>
 
-    box-shadow: 0 3px 15px rgba(150,190,220,0.18);
-  }
+                <a href="about.html" class="button">
+                    💗 มาทำความรู้จักกัน
+                </a>
 
-  .nav-logo {
-    color: #f29abb;
-    font-size: 20px;
-    font-weight: bold;
-  }
-
-  .nav-menu {
-    display: flex;
-    gap: 10px;
-  }
-
-  .nav-menu a {
-    text-decoration: none;
-    color: #6faecb;
-    font-weight: bold;
-    padding: 8px 13px;
-    border-radius: 20px;
-    transition: 0.3s;
-  }
-
-  .nav-menu a:hover {
-    background: #ffe5f1;
-    color: #ed8db2;
-  }
+            </div>
 
 
-  /* =========================
-     หน้า Home
-  ========================= */
+            <!-- รูปโปรไฟล์ -->
+            <div class="profile-area">
 
-  .home {
-    min-height: 100vh;
-    position: relative;
-    overflow: hidden;
+                <div class="profile-box">
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+                    <!-- เปลี่ยน profile.jpg เป็นชื่อรูปของตัวเอง -->
+                    <img src="profile.jpg" alt="รูปโปรไฟล์">
 
-    text-align: center;
+                </div>
 
-    background: linear-gradient(135deg, #dff5ff, #fff0f8);
+                <div class="profile-name">
+                    🎀 Thanachanok Kumthong 🎀
+                </div>
 
-    padding: 110px 20px 40px;
-  }
+            </div>
 
+        </div>
 
-  .home-content {
-    position: relative;
-    z-index: 2;
+    </section>
 
-    background: rgba(255,255,255,0.75);
-
-    padding: 35px 35px 45px;
-
-    border-radius: 35px;
-
-    max-width: 700px;
-    width: 90%;
-
-    box-shadow: 0 15px 35px rgba(150,190,220,0.25);
-
-    border: 3px solid rgba(255
+</body>
+</html>
