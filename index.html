@@ -1,18 +1,190 @@
-body>
- <!-- =========================
-         แถบเมนู
-    ========================= -->
-    <nav>
-        <div class="logo">🎀 My Portfolio 🧸</div>
+<!-- =========================
+     แถบเมนู
+========================= -->
+<nav class="navbar">
 
-        <ul class="menu">
-            <li><a href="index.html">🏠 หน้าแรก</a></li>
-            <li><a href="about.html">👩🏻‍🎓 เกี่ยวกับฉัน</a></li>
-            <li><a href="activities.html">🌷 กิจกรรม</a></li>
-            <li><a href="skills.html">✨ ความสามารถ</a></li>
-            <li><a href="contact.html">💌 ติดต่อ</a></li>
-        </ul>
-    </nav>
+    <!-- โลโก้ -->
+    <div class="logo">
+        🎀 My Portfolio 🧸
+    </div>
+
+    <!-- เมนู -->
+    <ul class="menu">
+        <li>
+            <a href="index.html">🏠 หน้าแรก</a>
+        </li>
+
+        <li>
+            <a href="about.html">👩🏻‍🎓 เกี่ยวกับฉัน</a>
+        </li>
+
+        <li>
+            <a href="activities.html">🌷 กิจกรรม</a>
+        </li>
+
+        <li>
+            <a href="skills.html">✨ ความสามารถ</a>
+        </li>
+
+        <li>
+            <a href="contact.html">💌 ติดต่อ</a>
+        </li>
+    </ul>
+
+</nav>
+
+<style>
+
+/* =========================
+   Navbar
+========================= */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 14px 5%;
+
+    background: rgba(255, 255, 255, 0.92);
+
+    box-shadow:
+        0 4px 18px rgba(150, 190, 220, 0.20);
+
+    backdrop-filter: blur(10px);
+
+    z-index: 1000;
+}
+
+
+/* =========================
+   Logo
+========================= */
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: #e88eb5;
+
+    white-space: nowrap;
+}
+
+
+/* =========================
+   Menu
+========================= */
+
+.menu {
+    display: flex;
+
+    list-style: none;
+
+    gap: 8px;
+
+    margin: 0;
+    padding: 0;
+
+    align-items: center;
+}
+
+
+.menu li a {
+    display: block;
+
+    text-decoration: none;
+
+    color: #666;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    padding: 9px 13px;
+
+    border-radius: 25px;
+
+    transition: all 0.3s ease;
+}
+
+
+/* =========================
+   Hover
+========================= */
+
+.menu li a:hover {
+
+    background: linear-gradient(
+        135deg,
+        #ffe0ef,
+        #dff5ff
+    );
+
+    color: #df78a4;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 12px rgba(220, 170, 200, 0.20);
+}
+
+
+/* =========================
+   หน้าที่กำลังเปิด
+========================= */
+
+.menu li a.active {
+
+    background: linear-gradient(
+        135deg,
+        #ffb6d5,
+        #91d8f5
+    );
+
+    color: white;
+
+    box-shadow:
+        0 5px 12px rgba(200, 160, 200, 0.25);
+}
+
+
+/* =========================
+   มือถือ
+========================= */
+
+@media (max-width: 800px) {
+
+    .navbar {
+        flex-direction: column;
+
+        gap: 8px;
+
+        padding: 10px;
+    }
+
+    .logo {
+        font-size: 17px;
+    }
+
+    .menu {
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        gap: 3px;
+    }
+
+    .menu li a {
+        font-size: 12px;
+
+        padding: 7px 9px;
+    }
+}
+
+</style>
     <!-- หน้าแรก : Profile / Welcome -->
 <section id="home" class="home">
   <div class="decor">✦ 💗 ✦ 🎀 ✦ 🍯 ✦</div>
