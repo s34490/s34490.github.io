@@ -1,35 +1,386 @@
-<!-- =========================
-         แถบเมนู
-    ========================= -->
-    <nav>
-        <div class="logo">
-        🎀 My Portfolio 🧸
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio 🧸🎀</title>
+
+  <style>
+
+    /* =========================
+       แถบเมนูด้านบน
+    ========================= */
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      padding: 14px 5%;
+
+      background: rgba(255,255,255,0.95);
+
+      box-shadow: 0 4px 15px rgba(150,190,220,0.2);
+
+      z-index: 1000;
+    }
+
+    /* โลโก้ */
+
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+      color: #e88eb5;
+      white-space: nowrap;
+    }
+
+    /* เมนู */
+
+    .menu {
+      display: flex;
+      list-style: none;
+      gap: 8px;
+    }
+
+    .menu li a {
+      text-decoration: none;
+      color: #666;
+
+      font-size: 14px;
+      font-weight: bold;
+
+      padding: 9px 13px;
+
+      border-radius: 25px;
+
+      transition: 0.3s;
+    }
+
+    /* ตอนเอาเมาส์ชี้ */
+
+    .menu li a:hover {
+      background: linear-gradient(
+        135deg,
+        #ffe0ef,
+        #dff5ff
+      );
+
+      color: #df78a4;
+
+      transform: translateY(-2px);
+    }
+
+
+    /* =========================
+       หน้าแรก
+    ========================= */
+
+    .home {
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      text-align: center;
+
+      background: linear-gradient(
+        135deg,
+        #dff5ff,
+        #fff0f8
+      );
+
+      padding: 100px 20px 40px;
+    }
+
+
+    .home-content {
+      position: relative;
+      z-index: 2;
+
+      background: rgba(255,255,255,0.75);
+
+      padding: 45px 35px;
+
+      border-radius: 35px;
+
+      max-width: 700px;
+      width: 90%;
+
+      box-shadow:
+        0 15px 35px rgba(150,190,220,0.25);
+
+      border: 3px solid rgba(255,255,255,0.9);
+    }
+
+
+    /* หมี */
+
+    .bear {
+      font-size: 85px;
+
+      margin-bottom: 5px;
+
+      animation: bounce 2s infinite;
+    }
+
+
+    /* Welcome */
+
+    .welcome {
+      color: #7dbbd9;
+
+      font-weight: bold;
+
+      letter-spacing: 2px;
+
+      font-size: 14px;
+    }
+
+
+    /* หัวข้อ */
+
+    h1 {
+      color: #555;
+
+      font-size: 38px;
+
+      line-height: 1.5;
+
+      margin: 15px 0;
+    }
+
+    h1 span {
+      color: #f29abb;
+    }
+
+
+    /* ข้อความ */
+
+    .intro {
+      color: #777;
+
+      font-size: 20px;
+
+      margin-bottom: 20px;
+    }
+
+
+    /* อิโมจิ */
+
+    .cute-icons {
+      font-size: 25px;
+
+      letter-spacing: 8px;
+
+      margin: 20px 0;
+    }
+
+
+    /* ปุ่ม */
+
+    .start-btn {
+      display: inline-block;
+
+      text-decoration: none;
+
+      background: linear-gradient(
+        135deg,
+        #ffb6d5,
+        #91d8f5
+      );
+
+      color: white;
+
+      padding: 13px 28px;
+
+      border-radius: 30px;
+
+      font-weight: bold;
+
+      box-shadow:
+        0 8px 18px rgba(200,150,190,0.25);
+
+      transition: 0.3s;
+    }
+
+    .start-btn:hover {
+      transform: translateY(-4px);
+    }
+
+
+    /* ของตกแต่งด้านบน */
+
+    .decor {
+      position: absolute;
+
+      top: 90px;
+
+      color: #f3a9c8;
+
+      font-size: 22px;
+    }
+
+
+    /* อิโมจิลอย */
+
+    .floating {
+      position: absolute;
+
+      font-size: 35px;
+
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .f1 {
+      left: 10%;
+      top: 25%;
+    }
+
+    .f2 {
+      right: 12%;
+      top: 20%;
+    }
+
+    .f3 {
+      left: 15%;
+      bottom: 20%;
+    }
+
+    .f4 {
+      right: 15%;
+      bottom: 18%;
+    }
+
+
+    /* Animation หมี */
+
+    @keyframes bounce {
+
+      0%,100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+
+    }
+
+
+    /* Animation ของลอย */
+
+    @keyframes float {
+
+      0%,100% {
+        transform: translateY(0) rotate(0deg);
+      }
+
+      50% {
+        transform: translateY(-15px) rotate(5deg);
+      }
+
+    }
+
+
+    /* =========================
+       โทรศัพท์
+    ========================= */
+
+    @media (max-width: 800px) {
+
+      nav {
+        flex-direction: column;
+
+        gap: 8px;
+
+        padding: 10px;
+      }
+
+      .logo {
+        font-size: 18px;
+      }
+
+      .menu {
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 3px;
+      }
+
+      .menu li a {
+        font-size: 12px;
+
+        padding: 7px 9px;
+      }
+
+    }
+
+
+    @media (max-width: 600px) {
+
+      h1 {
+        font-size: 28px;
+      }
+
+      .intro {
+        font-size: 17px;
+      }
+
+      .home-content {
+        padding: 35px 20px;
+      }
+
+      .bear {
+        font-size: 70px;
+      }
+
+      .cute-icons {
+        font-size: 20px;
+        letter-spacing: 4px;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+  <!-- =========================
+       แถบเมนู
+  ========================= -->
+
+  <nav>
+
+    <div class="logo">
+      🎀 My Portfolio 🧸
     </div>
 
-    <!-- เมนู -->
     <ul class="menu">
-        <li>
-            <a href="index.html">🏠 หน้าแรก</a>
-        </li>
 
-        <li>
-            <a href="about.html">👩🏻‍🎓 เกี่ยวกับฉัน</a>
-        </li>
-
-        <li>
-            <a href="activities.html">🌷 กิจกรรม</a>
-        </li>
-
-        <li>
-            <a href="skills.html">✨ ความสามารถ</a>
-        </li>
-
-        <li>
-            <a href="contact.html">💌 ติดต่อ</a>
-        </ul>
-    </nav>
-
-    <!-- หน้าแรก : Profile / Welcome -->
+      <li>
+<!-- หน้าแรก : Profile / Welcome -->
 <section id="home" class="home">
   <div class="decor">✦ 💗 ✦ 🎀 ✦ 🍯 ✦</div>
 
