@@ -1,91 +1,111 @@
-<!DOCTYPE html>
-<html lang="th">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portfolio 🧸🎀</title>
+<!-- =========================
+     แถบเมนูด้านบน
+========================= -->
 
-  <style>
+<nav class="navbar">
 
-    /* =========================
-       แถบเมนูด้านบน
-    ========================= */
+  <div class="logo">
+    🎀 My Portfolio 🧸
+  </div>
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+  <ul class="menu">
+    <li><a href="index.html">🏠 หน้าแรก</a></li>
+    <li><a href="about.html">👩🏻‍🎓 เกี่ยวกับฉัน</a></li>
+    <li><a href="activities.html">🌷 กิจกรรม</a></li>
+    <li><a href="skills.html">✨ ความสามารถ</a></li>
+    <li><a href="contact.html">💌 ติดต่อ</a></li>
+  </ul>
 
-    body {
-      font-family: Arial, sans-serif;
-    }
+</nav>
 
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
+<style>
+/* แถบเมนู */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
 
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-      padding: 14px 5%;
+  padding: 14px 5%;
 
-      background: rgba(255,255,255,0.95);
+  background: rgba(255, 255, 255, 0.95);
 
-      box-shadow: 0 4px 15px rgba(150,190,220,0.2);
+  box-shadow: 0 4px 15px rgba(150, 190, 220, 0.2);
 
-      z-index: 1000;
-    }
+  z-index: 1000;
+}
 
-    /* โลโก้ */
+/* โลโก้ */
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: #e88eb5;
+}
 
-    .logo {
-      font-size: 20px;
-      font-weight: bold;
-      color: #e88eb5;
-      white-space: nowrap;
-    }
+/* เมนู */
+.menu {
+  display: flex;
+  list-style: none;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+}
 
-    /* เมนู */
+.menu a {
+  display: block;
+  text-decoration: none;
 
-    .menu {
-      display: flex;
-      list-style: none;
-      gap: 8px;
-    }
+  color: #666;
+  font-size: 14px;
+  font-weight: bold;
 
-    .menu li a {
-      text-decoration: none;
-      color: #666;
+  padding: 9px 13px;
+  border-radius: 25px;
 
-      font-size: 14px;
-      font-weight: bold;
+  transition: 0.3s;
+}
 
-      padding: 9px 13px;
+/* เวลาเอาเมาส์ชี้ */
+.menu a:hover {
+  background: linear-gradient(
+    135deg,
+    #ffe0ef,
+    #dff5ff
+  );
 
-      border-radius: 25px;
+  color: #df78a4;
+  transform: translateY(-2px);
+}
 
-      transition: 0.3s;
-    }
+/* สำหรับมือถือ */
+@media (max-width: 800px) {
 
-    /* ตอนเอาเมาส์ชี้ */
+  .navbar {
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px;
+  }
 
-    .menu li a:hover {
-      background: linear-gradient(
-        135deg,
-        #ffe0ef,
-        #dff5ff
-      );
+  .logo {
+    font-size: 18px;
+  }
 
-      color: #df78a4;
+  .menu {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3px;
+  }
 
-      transform: translateY(-2px);
-    }
-
-
+  .menu a {
+    font-size: 12px;
+    padding: 7px 9px;
+  }
+}
+</style>
     /* =========================
        หน้าแรก
     ========================= */
