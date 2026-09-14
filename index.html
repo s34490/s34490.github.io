@@ -1,124 +1,117 @@
-<!-- หน้าแรก : Profile / Welcome -->
-<section id="home" class="home">
-  <div class="decor">✦ 💗 ✦ 🎀 ✦ 🍯 ✦</div>
-<img src="<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="th">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Portfolio | Thanachanok 💕</title>
+    <title>My Profile 💕</title>
 
     <style>
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
         body {
             font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #dff7ff, #ffe4f0);
             min-height: 100vh;
-            background: linear-gradient(135deg, #dff7ff, #ffe5f1);
             color: #555;
         }
 
-        /* เมนูด้านบน */
+        /* เมนู */
         nav {
             background: white;
-            padding: 15px 10px;
+            padding: 18px;
             text-align: center;
             box-shadow: 0 3px 15px rgba(0,0,0,0.08);
         }
 
         nav a {
             text-decoration: none;
-            color: #6bbbd8;
+            color: #69bddd;
             font-weight: bold;
-            margin: 0 10px;
+            margin: 0 12px;
         }
 
         nav a:hover {
-            color: #ff8bb8;
+            color: #ff8fba;
         }
 
         /* กล่องโปรไฟล์ */
-        .container {
-            max-width: 800px;
+        .profile-card {
+            width: 90%;
+            max-width: 700px;
             margin: 50px auto;
-            padding: 20px;
-        }
-
-        .card {
-            background: rgba(255,255,255,0.95);
-            border-radius: 30px;
             padding: 40px 25px;
+            background: rgba(255,255,255,0.95);
+            border-radius: 35px;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(100,150,180,0.2);
+            box-shadow: 0 12px 30px rgba(100,150,180,0.2);
         }
 
-        /* ⭐ รูปโปรไฟล์ */
-        .profile-photo {
+        /* รูปโปรไฟล์ */
+        .profile-img {
             width: 190px;
             height: 190px;
             margin: 0 auto 20px;
             padding: 7px;
             border-radius: 50%;
             background: linear-gradient(135deg, #ff9fc9, #8edcf5);
-            box-shadow: 0 8px 20px rgba(120,170,200,0.25);
         }
 
-        .profile-photo img {
+        .profile-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             border-radius: 50%;
             border: 5px solid white;
-            display: block;
         }
 
         .bear {
             font-size: 55px;
-            margin-bottom: 10px;
         }
 
         h1 {
-            color: #6fc7e6;
-            font-size: 28px;
-            margin-bottom: 15px;
+            color: #69c5e5;
+            margin: 10px 0;
+            font-size: 30px;
         }
 
         h2 {
-            color: #ff91ba;
-            font-size: 21px;
+            color: #ff86b4;
             margin-bottom: 20px;
         }
 
-        .text {
+        .info {
             font-size: 18px;
-            line-height: 1.9;
+            line-height: 2;
         }
 
         .name {
-            color: #ff75ac;
+            color: #ff6fa8;
             font-weight: bold;
         }
 
-        /* ปุ่ม */
+        /* กล่องข้อมูล */
+        .info-box {
+            margin-top: 25px;
+            padding: 20px;
+            border-radius: 20px;
+            background: #f5fbff;
+            text-align: left;
+            line-height: 2;
+        }
+
         .button {
             display: inline-block;
             margin-top: 25px;
-            padding: 13px 25px;
-            border-radius: 30px;
+            padding: 13px 28px;
             background: linear-gradient(135deg, #8edcf5, #ffafd0);
             color: white;
             text-decoration: none;
+            border-radius: 30px;
             font-weight: bold;
-            box-shadow: 0 5px 15px rgba(100,150,180,0.2);
-        }
-
-        .button:hover {
-            transform: translateY(-3px);
         }
 
         .decor {
@@ -126,7 +119,7 @@
             font-size: 25px;
         }
 
-        /* สำหรับมือถือ */
+        /* มือถือ */
         @media (max-width: 600px) {
 
             nav a {
@@ -134,24 +127,24 @@
                 margin: 0 5px;
             }
 
-            .container {
-                margin: 25px auto;
+            .profile-card {
+                margin-top: 30px;
             }
 
-            .profile-photo {
+            .profile-img {
                 width: 160px;
                 height: 160px;
             }
 
             h1 {
-                font-size: 23px;
+                font-size: 24px;
             }
 
             h2 {
-                font-size: 18px;
+                font-size: 19px;
             }
 
-            .text {
+            .info {
                 font-size: 16px;
             }
         }
@@ -169,412 +162,37 @@
     </nav>
 
 
-    <!-- หน้าโปรไฟล์ -->
-    <div class="container">
+    <!-- PROFILE -->
+    <div class="profile-card">
 
-        <div class="card">
+        <!-- รูปของฉัน -->
+        <div class="profile-img">
+            <img src="profile.jpg" alt="รูปโปรไฟล์">
+        </div>
 
-            <!-- 📸 รูปของเรา -->
-            <div class="profile-photo">
-                <img src="<!DOCTYPE html>
-<html lang="th">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <div class="bear">🐻</div>
 
-    <title>Portfolio | ธนัชชนก 💕</title>
+        <h1>สวัสดีค่ะ! 👋🏻💕</h1>
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        <h2>MY PROFILE 🌷</h2>
 
-        body {
-            font-family: Arial, sans-serif;
-            min-height: 100vh;
-            background: linear-gradient(135deg, #dff7ff, #ffe5f1);
-            color: #555;
-        }
+        <p class="info">
+            ฉันชื่อ <span class="name">Thanachanok Kumthong</span> 💗
+            <br>
+            นักเรียนชั้นมัธยมศึกษาปีที่ 6
+            <br>
+            โรงเรียนบ้านบึงอุตสาหกรรมนุเคราะห์
+        </p>
 
-        /* เมนูด้านบน */
-        nav {
-            background: white;
-            padding: 15px 10px;
-            text-align: center;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
-        }
+        <a href="about.html" class="button">
+            💌 รู้จักฉันมากขึ้น
+        </a>
 
-        nav a {
-            text-decoration: none;
-            color: #6bbbd8;
-            font-weight: bold;
-            margin: 0 10px;
-        }
-
-        nav a:hover {
-            color: #ff8bb8;
-        }
-
-        /* กล่องโปรไฟล์ */
-        .container {
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 20px;
-        }
-
-        .card {
-            background: rgba(255,255,255,0.95);
-            border-radius: 30px;
-            padding: 40px 25px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(100,150,180,0.2);
-        }
-
-        /* ⭐ รูปโปรไฟล์ */
-        .profile-photo {
-            width: 190px;
-            height: 190px;
-            margin: 0 auto 20px;
-            padding: 7px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #ff9fc9, #8edcf5);
-            box-shadow: 0 8px 20px rgba(120,170,200,0.25);
-        }
-
-        .profile-photo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 5px solid white;
-            display: block;
-        }
-
-        .bear {
-            font-size: 55px;
-            margin-bottom: 10px;
-        }
-
-        h1 {
-            color: #6fc7e6;
-            font-size: 28px;
-            margin-bottom: 15px;
-        }
-
-        h2 {
-            color: #ff91ba;
-            font-size: 21px;
-            margin-bottom: 20px;
-        }
-
-        .text {
-            font-size: 18px;
-            line-height: 1.9;
-        }
-
-        .name {
-            color: #ff75ac;
-            font-weight: bold;
-        }
-
-        /* ปุ่ม */
-        .button {
-            display: inline-block;
-            margin-top: 25px;
-            padding: 13px 25px;
-            border-radius: 30px;
-            background: linear-gradient(135deg, #8edcf5, #ffafd0);
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            box-shadow: 0 5px 15px rgba(100,150,180,0.2);
-        }
-
-        .button:hover {
-            transform: translateY(-3px);
-        }
-
-        .decor {
-            margin-top: 25px;
-            font-size: 25px;
-        }
-
-        /* สำหรับมือถือ */
-        @media (max-width: 600px) {
-
-            nav a {
-                font-size: 13px;
-                margin: 0 5px;
-            }
-
-            .container {
-                margin: 25px auto;
-            }
-
-            .profile-photo {
-                width: 160px;
-                height: 160px;
-            }
-
-            h1 {
-                font-size: 23px;
-            }
-
-            h2 {
-                font-size: 18px;
-            }
-
-            .text {
-                font-size: 16px;
-            }
-        }
-    </style>
-</head>
-
-<body>
-
-    <!-- เมนู -->
-    <nav>
-        <a href="index.html">🏠 หน้าแรก</a>
-        <a href="about.html">🌷 เกี่ยวกับฉัน</a>
-        <a href="activities.html">🎀 กิจกรรม</a>
-        <a href="works.html">🏆 ผลงาน</a>
-    </nav>
-
-
-    <!-- หน้าโปรไฟล์ -->
-    <div class="container">
-
-        <div class="card">
-
-            <!-- 📸 รูปของเรา -->
-            <div class="profile-photo">
-                <img src="profile.jpg" alt="รูปโปรไฟล์ของธนัชชนก">
-            </div>
-
-            <!-- 🐻 -->
-            <div class="bear">🐻</div>
-
-            <h1>✨ WELCOME TO MY PORTFOLIO ✨</h1>
-
-            <h2>
-                ยินดีต้อนรับสู่เว็บไซต์ Portfolio ของฉัน 💕
-            </h2>
-
-            <p class="text">
-                สวัสดีค่ะ 🌷<br>
-                ฉันชื่อ <span class="name">ธนัชชนก ขุมทอง</span> 💗<br>
-                นักเรียนชั้นมัธยมศึกษาปีที่ 6
-            </p>
-
-            <p class="text">
-                🩵 โรงเรียนบ้านบึงอุตสาหกรรมนุเคราะห์ 🩷
-            </p>
-
-            <p class="text">
-                มาทำความรู้จักฉันให้มากขึ้นกันนะคะ! ☁️🎀
-            </p>
-
-            <a href="about.html" class="button">
-                💌 ทำความรู้จักฉัน
-            </a>
-
-            <div class="decor">
-                🩵 ☁️ 🩷 🎀 🐻 🎀 🩷 ☁️ 🩵
-            </div>
-
+        <div class="decor">
+            🩵 ☁️ 🩷 🎀 🐻 🎀 🩷 ☁️ 🩵
         </div>
 
     </div>
 
 </body>
-</html>" alt="รูปโปรไฟล์ของThanachanok">
-            </div>
-
-            <!-- 🐻 -->
-            <div class="bear">🐻</div>
-
-            <h1>✨ WELCOME TO MY PORTFOLIO ✨</h1>
-
-            <h2>
-                ยินดีต้อนรับสู่เว็บไซต์ Portfolio ของฉัน 💕
-            </h2>
-
-            <p class="text">
-                สวัสดีค่ะ 🌷<br>
-                ฉันชื่อ <span class="name">Thanachanok Kumthong</span> 💗<br>
-                นักเรียนชั้นมัธยมศึกษาปีที่ 6
-            </p>
-
-            <p class="text">
-                🩵 โรงเรียนบ้านบึงอุตสาหกรรมนุเคราะห์ 🩷
-            </p>
-
-            <p class="text">
-                มาทำความรู้จักฉันให้มากขึ้นกันนะคะ! ☁️🎀
-            </p>
-
-            <a href="about.html" class="button">
-                💌 ทำความรู้จักฉัน
-            </a>
-
-            <div class="decor">
-                🩵 ☁️ 🩷 🎀 🐻 🎀 🩷 ☁️ 🩵
-            </div>
-
-        </div>
-
-    </div>
-
-</body>
-</html>" alt="รูปโปรไฟล์ของฉัน" class="profile-img">
-  <div class="home-content">
-    <div class="bear">🧸</div>
-
-    <p class="welcome">✨ WELCOME TO MY PORTFOLIO ✨</p>
-
-    <h1>
-      ยินดีต้อนรับสู่<br>
-      <span>เว็บไซต์ Portfolio ของฉัน</span> 💕
-    </h1>
-
-    <p class="intro">
-      เรามาทำความรู้จักกันให้มากขึ้นกันเถอะ! 🌷
-    </p>
-
-    <div class="cute-icons">
-      🌸 💗 🎀  🍯 ☁️
-    </div>
-
-    <a href="#about" class="start-btn">
-      💌 ทำความรู้จักฉัน
-    </a>
-  </div>
-
-  <div class="floating f1">💗</div>
-  <div class="floating f2">🌸</div>
-  <div class="floating f3">🎀</div>
-  <div class="floating f4">✨</div>
-</section>
-
-<style>
-  .home {
-    min-height: 100vh;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background: linear-gradient(135deg, #dff5ff, #fff0f8);
-    padding: 40px 20px;
-  }
-
-  .home-content {
-    position: relative;
-    z-index: 2;
-    background: rgba(255,255,255,0.75);
-    padding: 45px 35px;
-    border-radius: 35px;
-    max-width: 700px;
-    width: 90%;
-    box-shadow: 0 15px 35px rgba(150,190,220,0.25);
-    border: 3px solid rgba(255,255,255,0.9);
-  }
-
-  .bear {
-    font-size: 85px;
-    margin-bottom: 5px;
-    animation: bounce 2s infinite;
-  }
-
-  .welcome {
-    color: #7dbbd9;
-    font-weight: bold;
-    letter-spacing: 2px;
-    font-size: 14px;
-  }
-
-  h1 {
-    color: #555;
-    font-size: 38px;
-    line-height: 1.5;
-    margin: 15px 0;
-  }
-
-  h1 span {
-    color: #f29abb;
-  }
-
-  .intro {
-    color: #777;
-    font-size: 20px;
-    margin-bottom: 20px;
-  }
-
-  .cute-icons {
-    font-size: 25px;
-    letter-spacing: 8px;
-    margin: 20px 0;
-  }
-
-  .start-btn {
-    display: inline-block;
-    text-decoration: none;
-    background: linear-gradient(135deg, #ffb6d5, #91d8f5);
-    color: white;
-    padding: 13px 28px;
-    border-radius: 30px;
-    font-weight: bold;
-    box-shadow: 0 8px 18px rgba(200,150,190,0.25);
-    transition: 0.3s;
-  }
-
-  .start-btn:hover {
-    transform: translateY(-4px);
-  }
-
-  .decor {
-    position: absolute;
-    top: 30px;
-    color: #f3a9c8;
-    font-size: 22px;
-  }
-
-  .floating {
-    position: absolute;
-    font-size: 35px;
-    animation: float 4s ease-in-out infinite;
-  }
-
-  .f1 { left: 10%; top: 25%; }
-  .f2 { right: 12%; top: 20%; }
-  .f3 { left: 15%; bottom: 20%; }
-  .f4 { right: 15%; bottom: 18%; }
-
-  @keyframes bounce {
-    0%,100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-  }
-
-  @keyframes float {
-    0%,100% { transform: translateY(0) rotate(0deg); }
-    50% { transform: translateY(-15px) rotate(5deg); }
-  }
-
-  @media (max-width: 600px) {
-    h1 {
-      font-size: 28px;
-    }
-
-    .intro {
-      font-size: 17px;
-    }
-
-    .home-content {
-      padding: 35px 20px;
-    }
-  }
-</style>
+</html>
