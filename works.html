@@ -1,285 +1,443 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>ผลงาน | My Portfolio</title>
+<title>ผลงาน 🏆 | My Portfolio</title>
 
-    <style>
+<style>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-        body {
-            min-height: 100vh;
-            background: linear-gradient(135deg, #dff6ff, #ffe4f0);
-            color: #555;
-        }
-
-
-        /* =========================
-           แถบเมนูด้านบน
-        ========================= */
-
-        nav {
-            width: 100%;
-            background: white;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-            align-items: center;
-            gap: 5px;
-            padding: 12px 5px;
-            box-shadow: 0 3px 15px rgba(130,180,200,0.2);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        nav a {
-            flex: 1;
-            text-decoration: none;
-            color: #69a9c2;
-            font-size: 16px;
-            font-weight: bold;
-            text-align: center;
-            line-height: 1.4;
-            white-space: normal;
-            padding: 9px 5px;
-            border-radius: 20px;
-            transition: 0.3s;
-        }
-
-        nav a:hover,
-        nav a.active {
-            color: white;
-            background: #ffb6d5;
-        }
+body {
+  font-family: Arial, Tahoma, sans-serif;
+  background: linear-gradient(135deg, #dff6ff, #fff0f8);
+  color: #666;
+}
 
 
-        /* =========================
-           เนื้อหา
-        ========================= */
+/* =========================
+   แถบเมนู
+========================= */
 
-        .container {
-            width: 90%;
-            max-width: 1100px;
-            margin: auto;
-            padding: 45px 0;
-        }
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
 
+  width: 100%;
+  height: 70px;
 
-        /* =========================
-           ส่วนหัว
-        ========================= */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
-        .header {
-            text-align: center;
-            margin-bottom: 35px;
-        }
+  padding: 0 40px;
 
-        .decor {
-            font-size: 22px;
-            margin-bottom: 8px;
-        }
+  background: rgba(255,255,255,0.95);
 
-        .bear {
-            font-size: 58px;
-        }
+  box-shadow: 0 4px 18px rgba(120,180,220,0.2);
 
-        .header h1 {
-            font-size: 38px;
-            color: #ef83b1;
-            margin: 8px 0;
-        }
+  z-index: 999;
+}
 
-        .header p {
-            color: #6da9c3;
-            font-size: 17px;
-        }
+.nav-logo {
+  color: #e98faf;
+  font-size: 20px;
+  font-weight: bold;
+  white-space: nowrap;
+}
 
+.nav-menu {
+  display: flex;
+  gap: 8px;
+}
 
-        /* =========================
-           กล่องแต่ละหัวข้อ
-        ========================= */
+.nav-menu a {
+  text-decoration: none;
+  color: #69aeca;
+  font-weight: bold;
 
-        .work-section {
-            background: rgba(255,255,255,0.95);
-            border-radius: 28px;
-            padding: 28px;
-            margin-bottom: 30px;
-            box-shadow: 0 8px 20px rgba(120,170,190,0.18);
-            border: 3px solid #e4f7ff;
-        }
+  padding: 10px 14px;
+  border-radius: 25px;
 
-        .work-section h2 {
-            color: #ef83b1;
-            font-size: 25px;
-            margin-bottom: 10px;
-            text-align: center;
-        }
+  transition: 0.3s;
+}
 
-        .section-text {
-            text-align: center;
-            margin-bottom: 25px;
-            line-height: 1.8;
-        }
+.nav-menu a:hover {
+  background: #ffe3ef;
+  color: #e77fa5;
+  transform: translateY(-3px);
+}
 
 
-        /* =========================
-           กิจกรรม 9 รูป
-        ========================= */
+/* =========================
+   หน้าผลงาน
+========================= */
 
-        .activity-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
+.works {
+  min-height: 100vh;
 
-        .activity-card {
-            background: linear-gradient(135deg, #fefcff, #ecfaff);
-            border: 2px solid #dff4ff;
-            border-radius: 22px;
-            padding: 12px;
-            text-align: center;
-            transition: 0.3s;
-        }
+  padding: 110px 20px 70px;
 
-        .activity-card:hover {
-            transform: translateY(-5px);
-        }
+  text-align: center;
 
-        .activity-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 16px;
-            display: block;
-            margin-bottom: 12px;
-        }
+  position: relative;
+  overflow: hidden;
+}
 
-        .activity-card h3 {
-            color: #ef83b1;
-            font-size: 17px;
-            margin-bottom: 6px;
-        }
+.title {
+  color: #69aeca;
+  font-size: 38px;
+  margin-bottom: 8px;
+}
 
-        .activity-card p {
-            font-size: 14px;
-            line-height: 1.6;
-        }
+.subtitle {
+  color: #ed91b3;
+  font-size: 18px;
+  margin-bottom: 35px;
+}
 
 
-        /* =========================
-           ผลงาน / เกียรติบัตร 5 รูป
-        ========================= */
+/* =========================
+   หัวข้อย่อย
+========================= */
 
-        .certificate-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
+.section-title {
+  color: #e889aa;
+  font-size: 28px;
 
-        .certificate-card {
-            background: linear-gradient(135deg, #fff0f7, #e9f9ff);
-            border: 2px solid #ffd9e8;
-            border-radius: 22px;
-            padding: 12px;
-            text-align: center;
-            transition: 0.3s;
-        }
-
-        .certificate-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .certificate-card img {
-            width: 100%;
-            height: 220px;
-            object-fit: contain;
-            background: white;
-            border-radius: 16px;
-            display: block;
-            margin-bottom: 12px;
-        }
-
-        .certificate-card h3 {
-            color: #69a9c3;
-            font-size: 16px;
-            line-height: 1.5;
-        }
+  margin: 35px 0 20px;
+}
 
 
-        /* =========================
-           ปุ่มหน้าต่อไป
-        ========================= */
+/* =========================
+   กล่องผลงาน
+========================= */
 
-        .next {
-            text-align: center;
-            margin: 40px 0 15px;
-        }
+.work-grid {
+  width: min(1100px, 95%);
 
-        .next a {
-            display: inline-block;
-            padding: 15px 32px;
-            border-radius: 30px;
-            background: linear-gradient(90deg, #8edcff, #ff9fc6);
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 17px;
-            box-shadow: 0 7px 18px rgba(220,150,190,0.25);
-            transition: 0.3s;
-        }
+  margin: auto;
 
-        .next a:hover {
-            transform: scale(1.05);
-        }
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 20px;
+}
 
 
-        /* =========================
-           Footer
-        ========================= */
+/* =========================
+   การ์ดผลงาน
+========================= */
 
-        footer {
-            text-align: center;
-            padding: 25px;
-            color: #76a6b9;
-        }
+.work-card {
+  background: rgba(255,255,255,0.92);
+
+  border: 3px solid white;
+
+  border-radius: 25px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 10px 25px rgba(130,180,215,0.20);
+
+  transition: 0.3s;
+
+  animation: appear 0.8s ease;
+}
+
+.work-card:hover {
+  transform: translateY(-8px) scale(1.02);
+
+  box-shadow:
+    0 15px 30px rgba(220,150,190,0.25);
+}
 
 
-        /* =========================
-           โทรศัพท์
-        ========================= */
+/* =========================
+   รูปผลงาน
+========================= */
 
-        @media (max-width: 700px) {
+.work-image {
+  width: 100%;
+  height: 190px;
 
-            nav a {
-                font-size: 13px;
-                padding: 8px 3px;
-            }
+  overflow: hidden;
 
-            .container {
-                width: 94%;
-            }
+  background: linear-gradient(
+    135deg,
+    #f7c1d7,
+    #a9def3
+  );
+}
 
-            .header h1 {
-                font-size: 30px;
-            }
+.work-image img {
+  width: 100%;
+  height: 100%;
 
-            .activity-grid,
-            .certificate-grid {
-                grid-template-columns: 1fr;
-            }
+  object-fit: cover;
 
-        }
+  transition: 0.4s;
+}
 
-    </style>
+.work-card:hover .work-image img {
+  transform: scale(1.08);
+}
+
+
+/* =========================
+   รายละเอียดผลงาน
+========================= */
+
+.work-content {
+  padding: 18px;
+}
+
+.work-content h3 {
+  color: #e889aa;
+
+  font-size: 17px;
+
+  margin-bottom: 8px;
+}
+
+.work-content p {
+  color: #777;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================
+   เกียรติบัตร
+========================= */
+
+.certificate-grid {
+  width: min(1100px, 95%);
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 22px;
+}
+
+.certificate-card {
+  background: white;
+
+  padding: 10px;
+
+  border-radius: 22px;
+
+  border: 3px solid #fff;
+
+  box-shadow:
+    0 10px 25px rgba(130,180,215,0.20);
+
+  transition: 0.3s;
+}
+
+.certificate-card:hover {
+  transform: translateY(-7px) rotate(1deg);
+}
+
+.certificate-card img {
+  width: 100%;
+
+  height: 220px;
+
+  object-fit: cover;
+
+  border-radius: 15px;
+}
+
+.certificate-card h3 {
+  color: #e889aa;
+
+  font-size: 16px;
+
+  padding: 12px 5px 8px;
+}
+
+
+/* =========================
+   ปุ่มหน้าต่อไป
+========================= */
+
+.next-btn {
+  display: inline-block;
+
+  margin-top: 45px;
+
+  padding: 14px 30px;
+
+  color: white;
+
+  text-decoration: none;
+
+  font-weight: bold;
+
+  border-radius: 30px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f3a1c0,
+      #83cbe8
+    );
+
+  box-shadow:
+    0 7px 18px rgba(150,190,220,0.25);
+
+  transition: 0.3s;
+}
+
+.next-btn:hover {
+  transform: scale(1.06);
+}
+
+
+/* =========================
+   ของตกแต่ง
+========================= */
+
+.decor {
+  position: absolute;
+
+  font-size: 30px;
+
+  animation:
+    floating 4s ease-in-out infinite;
+}
+
+.d1 {
+  top: 15%;
+  left: 5%;
+}
+
+.d2 {
+  top: 30%;
+  right: 5%;
+  animation-delay: 1s;
+}
+
+.d3 {
+  top: 60%;
+  left: 6%;
+  animation-delay: 2s;
+}
+
+.d4 {
+  bottom: 10%;
+  right: 7%;
+  animation-delay: 1.5s;
+}
+
+
+/* =========================
+   Animation
+========================= */
+
+@keyframes floating {
+
+  0%,100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-20px) rotate(8deg);
+  }
+
+}
+
+@keyframes appear {
+
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+/* =========================
+   มือถือ
+========================= */
+
+@media (max-width:900px) {
+
+  .work-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .certificate-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+@media (max-width:700px) {
+
+  .navbar {
+    height: auto;
+
+    padding: 10px;
+
+    flex-direction: column;
+
+    gap: 5px;
+  }
+
+  .nav-logo {
+    font-size: 16px;
+  }
+
+  .nav-menu {
+    gap: 2px;
+  }
+
+  .nav-menu a {
+    font-size: 11px;
+    padding: 7px;
+  }
+
+  .works {
+    padding-top: 135px;
+  }
+
+  .title {
+    font-size: 30px;
+  }
+
+  .work-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .certificate-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+</style>
 </head>
 
 
@@ -290,339 +448,352 @@
      แถบเมนู
 ========================= -->
 
-<nav>
+<nav class="navbar">
+
+  <div class="nav-logo">
+    🧸 My Portfolio
+  </div>
+
+  <div class="nav-menu">
 
     <a href="index.html">
-        🏠 หน้าแรก
+      🏠 หน้าแรก
     </a>
 
     <a href="me.html">
-        🌷 เกี่ยวกับฉัน
+      🌷 เกี่ยวกับฉัน
     </a>
 
     <a href="activities.html">
-        👩🏻‍🎓 การศึกษา
+      👩🏻‍🎓 การศึกษา
     </a>
 
-    <a href="works.html" class="active">
-        🏆 ผลงาน
+    <a href="works.html">
+      🏆 ผลงาน
     </a>
 
     <a href="contact.html">
-        📞 ติดต่อฉัน
+      📞 ติดต่อฉัน
     </a>
+
+  </div>
 
 </nav>
 
 
 <!-- =========================
-     CONTENT
+     หน้าผลงาน
 ========================= -->
 
-<main class="container">
+<section class="works">
 
 
-    <!-- ส่วนหัว -->
+  <!-- ของตกแต่ง -->
 
-    <div class="header">
+  <div class="decor d1">🌸</div>
 
-        <div class="decor">
-            ✦ 💗 🩵 🎀 🍯 🩵 💗 ✦
-        </div>
+  <div class="decor d2">💗</div>
 
-        <div class="bear">
-            🧸
-        </div>
+  <div class="decor d3">🎀</div>
 
-        <h1>
-            ผลงานและกิจกรรม
-        </h1>
+  <div class="decor d4">🧸</div>
+
+
+  <h1 class="title">
+    🏆 ผลงานของฉัน 🏆
+  </h1>
+
+  <p class="subtitle">
+    รวมกิจกรรม ผลงาน และเกียรติบัตรที่ฉันภาคภูมิใจ 💕
+  </p>
+
+
+  <!-- =========================
+       กิจกรรม
+  ========================= -->
+
+  <h2 class="section-title">
+    🌷 กิจกรรมและผลงาน 🌷
+  </h2>
+
+
+  <div class="work-grid">
+
+
+    <!-- กิจกรรม 1 -->
+
+    <div class="work-card">
+
+      <div class="work-image">
+        <img src="ใส่ลิงก์รูปกิจกรรม1" alt="กิจกรรมที่ 1">
+      </div>
+
+      <div class="work-content">
+        <h3>💃 การแข่งขันระบำจีน</h3>
 
         <p>
-            ประสบการณ์และผลงานที่ฉันภาคภูมิใจ 🏆✨
+          เข้าร่วมการแข่งขันระบำจีน
+          และได้รับรางวัลชมเชย
         </p>
+      </div>
 
     </div>
 
 
+    <!-- กิจกรรม 2 -->
 
-    <!-- =========================
-         กิจกรรม
-    ========================= -->
+    <div class="work-card">
 
-    <section class="work-section">
+      <div class="work-image">
+        <img src="ใส่ลิงก์รูปกิจกรรม2" alt="กิจกรรมที่ 2">
+      </div>
 
-        <h2>
-            🎀 กิจกรรมที่เข้าร่วม
-        </h2>
+      <div class="work-content">
+        <h3>🎤 การแสดงวงขับร้องภาษาจีน</h3>
 
-        <p class="section-text">
-            กิจกรรมต่าง ๆ ที่ได้เข้าร่วมและช่วยพัฒนาทักษะของฉัน
+        <p>
+          เข้าร่วมการแสดงและขับร้องเพลงภาษาจีน
         </p>
-
-
-        <div class="activity-grid">
-
-
-            <!-- กิจกรรม 1 -->
-
-            <div class="activity-card">
-
-                <img src="activity1.jpg" alt="กิจกรรมที่ 1">
-
-                <h3>
-                    🇨🇳 การแข่งขันระบำจีน
-                </h3>
-
-                <p>
-                    ฝึกการแสดงและการทำงานเป็นทีม
-                </p>
-
-            </div>
-
-
-            <!-- กิจกรรม 2 -->
-
-            <div class="activity-card">
-
-                <img src="activity2.jpg" alt="กิจกรรมที่ 2">
-
-                <h3>
-                    🎶 Chinese Choir
-                </h3>
-
-                <p>
-                    ฝึกทักษะการร้องเพลงภาษาจีน
-                </p>
-
-            </div>
-
-
-            <!-- กิจกรรม 3 -->
-
-            <div class="activity-card">
-
-                <img src="activity3.jpg" alt="กิจกรรมที่ 3">
-
-                <h3>
-                    💃 TO BE NUMBER ONE
-                </h3>
-
-                <p>
-                    กิจกรรม Dancercise และการแสดง
-                </p>
-
-            </div>
-
-
-            <!-- กิจกรรม 4 -->
-
-            <div class="activity-card">
-
-                <img src="activity4.jpg" alt="กิจกรรมที่ 4">
-
-                <h3>
-                    🌷 กิจกรรมจิตอาสา
-                </h3>
-
-                <p>
-                    ช่วยเหลืองานส่วนรวม
-                </p>
-
-            </div>
-
-
-            <!-- กิจกรรม 5 -->
-
-            <div class="activity-card">
-
-                <img src="activity5.jpg" alt="กิจกรรมที่ 5">
-
-                <h3>
-                    📚 กิจกรรมวิชาการ
-                </h3>
-
-                <p>
-                    เข้าร่วมกิจกรรมด้านวิชาการ
-                </p>
-
-            </div>
-
-
-            <!-- กิจกรรม 6 -->
-
-            <div class="activity-card">
-
-                <img src="activity6.jpg" alt="กิจกรรมที่ 6">
-
-                <h3>
-                    🏫 กิจกรรมโรงเรียน
-                </h3>
-
-                <p>
-                    มีส่วนร่วมในกิจกรรมของโรงเรียน
-                </p>
-
-            </div>
-
-
-            <!-- กิจกรรม 7 -->
-
-            <div class="activity-card">
-
-                <img src="activity7.jpg" alt="กิจกรรมที่ 7">
-
-                <h3>
-                    🎤 กิจกรรมการแสดง
-                </h3>
-
-                <p>
-                    ฝึกความกล้าแสดงออก
-                </p>
-
-            </div>
-
-
-            <!-- กิจกรรม 8 -->
-
-            <div class="activity-card">
-
-                <img src="activity8.jpg" alt="กิจกรรมที่ 8">
-
-                <h3>
-                    🤝 การทำงานเป็นทีม
-                </h3>
-              <p>
-                    ฝึกการทำงานร่วมกับผู้อื่น
-                </p>
-
-            </div>
-
-
-            <!-- กิจกรรม 9 -->
-
-            <div class="activity-card">
-
-                <img src="activity9.jpg" alt="กิจกรรมที่ 9">
-
-                <h3>
-                    ✨ กิจกรรมพัฒนาตนเอง
-                </h3>
-
-                <p>
-                    พัฒนาความรู้และความสามารถ
-                </p>
-
-            </div>
-
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =========================
-         ผลงาน / เกียรติบัตร
-    ========================= -->
-
-    <section class="work-section">
-
-        <h2>
-            🏆 ผลงานและเกียรติบัตร
-        </h2>
-
-        <p class="section-text">
-            ผลงานและเกียรติบัตรที่ได้รับจากกิจกรรมและการเรียนรู้
-        </p>
-
-
-        <div class="certificate-grid">
-
-
-            <!-- เกียรติบัตร 1 -->
-
-            <div class="certificate-card">
-
-                <img src="certificate1.jpg" alt="เกียรติบัตรที่ 1">
-
-                <h3>
-                    🏅 เกียรติบัตรการแข่งขันระบำจีน
-                </h3>
-
-            </div>
-
-
-            <!-- เกียรติบัตร 2 -->
-
-            <div class="certificate-card">
-
-                <img src="certificate2.jpg" alt="เกียรติบัตรที่ 2">
-
-                <h3>
-                    📜 เกียรติบัตรด้านภาษาจีน
-                </h3>
-
-            </div>
-
-
-            <!-- เกียรติบัตร 3 -->
-
-            <div class="certificate-card">
-
-                <img src="certificate3.jpg" alt="เกียรติบัตรที่ 3">
-
-                <h3>
-                    🌟 เกียรติบัตรกิจกรรม
-                </h3>
-
-            </div>
-
-
-            <!-- เกียรติบัตร 4 -->
-
-            <div class="certificate-card">
-
-                <img src="certificate4.jpg" alt="เกียรติบัตรที่ 4">
-
-                <h3>
-                    📚 เกียรติบัตรการอบรม
-                </h3>
-
-            </div>
-
-
-            <!-- เกียรติบัตร 5 -->
-
-            <div class="certificate-card">
-
-                <img src="certificate5.jpg" alt="เกียรติบัตรที่ 5">
-
-                <h3>
-                    💗 เกียรติบัตรผลงาน
-                </h3>
-
-            </div>
-
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =========================
-         ปุ่มไปหน้าติดต่อฉัน
-    ========================= -->
-
-    <div class="next">
-
-        <a href="contact.html">
-            📞 ไปหน้าติดต่อฉัน →
-        </a>
+      </div>
 
     </div>
 
 
-</main>
+    <!-- กิจกรรม 3 -->
+
+    <div class="work-card">
+
+      <div class="work-image">
+        <img src="ใส่ลิงก์รูปกิจกรรม3" alt="กิจกรรมที่ 3">
+      </div>
+
+      <div class="work-content">
+        <h3>💃 TO BE NUMBER ONE</h3>
+
+        <p>
+          เข้าร่วมกิจกรรม TO BE NUMBER ONE
+          และกิจกรรมการเต้น
+        </p>
+      </div>
+
+    </div>
+
+
+    <!-- กิจกรรม 4 -->
+
+    <div class="work-card">
+
+      <div class="work-image">
+        <img src="ใส่ลิงก์รูปกิจกรรม4" alt="กิจกรรมที่ 4">
+      </div>
+
+      <div class="work-content">
+        <h3>📚 กิจกรรมวิชาการ</h3>
+
+        <p>
+          เข้าร่วมกิจกรรมและช่วยจัดบูธ
+          ในงานวิชาการของโรงเรียน
+        </p>
+      </div>
+
+    </div>
+
+
+    <!-- กิจกรรม 5 -->
+
+    <div class="work-card">
+
+      <div class="work-image">
+        <img src="ใส่ลิงก์รูปกิจกรรม5" alt="กิจกรรมที่ 5">
+      </div>
+
+      <div class="work-content">
+        <h3>🤝 กิจกรรมจิตอาสา</h3>
+
+        <p>
+          เข้าร่วมกิจกรรมจิตอาสา
+          และช่วยเหลืองานส่วนรวม
+        </p>
+      </div>
+
+    </div>
+
+
+    <!-- กิจกรรม 6 -->
+
+    <div class="work-card">
+
+      <div class="work-image">
+        <img src="ใส่ลิงก์รูปกิจกรรม6" alt="กิจกรรมที่ 6">
+      </div>
+
+      <div class="work-content">
+        <h3>🙏 ค่ายคุณธรรม</h3>
+
+        <p>
+          เข้าร่วมค่ายคุณธรรมในฐานะตัวแทนห้อง
+        </p>
+      </div>
+
+    </div>
+
+
+    <!-- กิจกรรม 7 -->
+
+    <div class="work-card">
+
+      <div class="work-image">
+        <img src="ใส่ลิงก์รูปกิจกรรม7" alt="กิจกรรมที่ 7">
+      </div>
+
+      <div class="work-content">
+        <h3>🏃 กิจกรรมกีฬาสี</h3>
+
+        <p>
+          เข้าร่วมกิจกรรมกีฬาสี
+          และทำงานร่วมกับเพื่อน
+        </p>
+      </div>
+
+    </div>
+
+
+    <!-- กิจกรรม 8 -->
+
+    <div class="work-card">
+
+      <div class="work-image">
+        <img src="ใส่ลิงก์รูปกิจกรรม8" alt="กิจกรรมที่ 8">
+      </div>
+
+      <div class="work-content">
+        <h3>🎓 กิจกรรมทัศนศึกษา</h3>
+
+        <p>
+          เข้าร่วมกิจกรรมทัศนศึกษาระดับชั้นมัธยมศึกษาปีที่ 6
+        </p>
+      </div>
+
+    </div>
+
+
+  </div>
+
+
+  <!-- =========================
+       เกียรติบัตร
+  ========================= -->
+
+  <h2 class="section-title">
+    📜 เกียรติบัตร 📜
+  </h2>
+
+
+  <div class="certificate-grid">
+
+
+    <!-- เกียรติบัตร 1 -->
+
+    <div class="certificate-card">
+
+      <img src="ใส่ลิงก์เกียรติบัตร1"
+           alt="เกียรติบัตร 1">
+
+      <h3>
+        📜 เกียรติบัตรที่ 1
+      </h3>
+
+    </div>
+
+
+    <!-- เกียรติบัตร 2 -->
+
+    <div class="certificate-card">
+
+      <img src="ใส่ลิงก์เกียรติบัตร2"
+           alt="เกียรติบัตร 2">
+
+      <h3>
+        📜 เกียรติบัตรที่ 2
+      </h3>
+
+    </div>
+
+
+    <!-- เกียรติบัตร 3 -->
+
+    <div class="certificate-card">
+
+      <img src="ใส่ลิงก์เกียรติบัตร3"
+           alt="เกียรติบัตร 3">
+
+      <h3>
+        📜 เกียรติบัตรที่ 3
+      </h3>
+
+    </div>
+
+
+    <!-- เกียรติบัตร 4 -->
+
+    <div class="certificate-card">
+
+      <img src="ใส่ลิงก์เกียรติบัตร4"
+           alt="เกียรติบัตร 4">
+
+      <h3>
+        📜 เกียรติบัตรที่ 4
+      </h3>
+
+    </div>
+
+
+    <!-- เกียรติบัตร 5 -->
+
+    <div class="certificate-card">
+
+      <img src="ใส่ลิงก์เกียรติบัตร5"
+           alt="เกียรติบัตร 5">
+
+      <h3>
+        📜 เกียรติบัตรที่ 5
+      </h3>
+
+    </div>
+
+
+    <!-- เกียรติบัตร 6 -->
+
+    <div class="certificate-card">
+
+      <img src="ใส่ลิงก์เกียรติบัตร6"
+           alt="เกียรติบัตร 6">
+
+      <h3>
+        📜 เกียรติบัตรที่ 6
+      </h3>
+
+    </div>
+
+
+  </div>
+
+
+  <!-- =========================
+       ปุ่มหน้าต่อไป
+  ========================= -->
+
+  <a
+    href="contact.html"
+    class="next-btn"
+  >
+    📞 ติดต่อฉัน →
+  </a>
+
+
+</section>
+
+
+</body>
+</html>
       
