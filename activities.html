@@ -1,302 +1,670 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>ประวัติการศึกษา | My Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
+<title>ประวัติการศึกษา 📚 | My Portfolio</title>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+<style>
 
-        body {
-            min-height: 100vh;
-            background: linear-gradient(135deg, #dff6ff, #ffe4f0);
-            color: #555;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        /* =========================
-           แถบเมนูด้านบน
-        ========================= */
+body {
+    font-family: Arial, Tahoma, sans-serif;
+    background: linear-gradient(135deg, #dff6ff, #fff0f8);
+    color: #666;
+}
 
-        nav {
-            background: rgba(255,255,255,0.95);
-            padding: 15px 6%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 3px 15px rgba(130,180,200,0.2);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
 
-        .logo {
-            font-size: 22px;
-            font-weight: bold;
-            color: #ef83b1;
-        }
+/* =========================
+   แถบเมนู
+========================= */
 
-        .menu {
-            display: flex;
-            list-style: none;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
+.navbar {
 
-        .menu a {
-            text-decoration: none;
-            color: #555;
-            padding: 9px 14px;
-            border-radius: 20px;
-            transition: 0.3s;
-        }
+    position: fixed;
 
-        .menu a:hover,
-        .menu a.active {
-            background: #ffb6d5;
-            color: white;
-        }
+    top: 0;
+    left: 0;
 
-        /* =========================
-           ส่วนหัว
-        ========================= */
+    width: 100%;
+    height: 70px;
 
-        .container {
-            width: 90%;
-            max-width: 1050px;
-            margin: auto;
-            padding: 45px 0;
-        }
+    display: flex;
 
-        .header {
-            text-align: center;
-            margin-bottom: 35px;
-        }
+    align-items: center;
+    justify-content: space-between;
 
-        .decor {
-            font-size: 22px;
-            margin-bottom: 8px;
-        }
+    padding: 0 40px;
 
-        .bear {
-            font-size: 58px;
-        }
+    background: rgba(255,255,255,0.95);
 
-        .header h1 {
-            font-size: 38px;
-            color: #ef83b1;
-            margin: 8px 0;
-        }
+    box-shadow:
+        0 4px 18px rgba(120,180,220,0.2);
 
-        .header p {
-            color: #6da9c3;
-            font-size: 17px;
-        }
+    z-index: 999;
+}
 
-        /* =========================
-           กล่องประวัติการศึกษา
-        ========================= */
 
-        .education-card {
-            background: rgba(255,255,255,0.95);
-            border-radius: 28px;
-            padding: 28px;
-            margin-bottom: 25px;
-            box-shadow: 0 8px 20px rgba(120,170,190,0.18);
-            border: 3px solid #e4f7ff;
-        }
+.nav-logo {
 
-        .education-card h2 {
-            color: #ef83b1;
-            font-size: 25px;
-            margin-bottom: 15px;
-        }
+    color: #e98faf;
 
-        .education-card p {
-            line-height: 1.8;
-            font-size: 16px;
-        }
+    font-size: 20px;
 
-        .school-name {
-            color: #65a6c0;
-            font-weight: bold;
-        }
+    font-weight: bold;
 
-        /* =========================
-           แผนการเรียน
-        ========================= */
+    white-space: nowrap;
+}
 
-        .study-plan {
-            margin-top: 18px;
-            padding: 20px;
-            border-radius: 22px;
-            background: linear-gradient(135deg, #e5f8ff, #fff0f7);
-        }
 
-        .study-plan h3 {
-            color: #69a9c3;
-            margin-bottom: 10px;
-        }
+.nav-menu {
 
-        /* =========================
-           Timeline
-        ========================= */
+    display: flex;
 
-        .timeline {
-            border-left: 4px solid #ffb6d5;
-            padding-left: 25px;
-            margin-top: 10px;
-        }
+    gap: 8px;
+}
 
-        .timeline-item {
-            position: relative;
-            margin-bottom: 25px;
-        }
 
-        .timeline-item::before {
-            content: "♡";
-            position: absolute;
-            left: -43px;
-            top: 0;
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            background: #8edcff;
-            color: white;
-            text-align: center;
-            line-height: 28px;
-        }
+.nav-menu a {
 
-        .timeline-item h3 {
-            color: #ef83b1;
-            margin-bottom: 5px;
-        }
+    text-decoration: none;
 
-        /* =========================
-           มหาวิทยาลัย
-        ========================= */
+    color: #69aeca;
 
-        .university-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 18px;
-            margin-top: 20px;
-        }
+    font-weight: bold;
 
-        .university-card {
-            padding: 20px;
-            border-radius: 22px;
-            background: linear-gradient(135deg, #fefcff, #ecfaff);
-            border: 2px solid #dff4ff;
-            transition: 0.3s;
-        }
+    padding: 10px 14px;
 
-        .university-card:hover {
-            transform: translateY(-5px);
-        }
+    border-radius: 25px;
 
-        .university-card h3 {
-            color: #ef83b1;
-            margin-bottom: 10px;
-        }
+    transition: 0.3s;
+}
 
-        .university-card p {
-            font-size: 15px;
-            line-height: 1.7;
-        }
 
-        .main-target {
-            border: 3px solid #ffb5d3;
-        }
+.nav-menu a:hover {
 
-        .badge {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 5px 13px;
-            border-radius: 20px;
-            background: #d8f4ff;
-            color: #5898b4;
-            font-size: 13px;
-        }
+    background: #ffe3ef;
 
-        /* =========================
-           เป้าหมาย
-        ========================= */
+    color: #e77fa5;
 
-        .goal {
-            text-align: center;
-            background: linear-gradient(135deg, #fff0f7, #e5f8ff);
-        }
+    transform: translateY(-3px);
+}
 
-        .goal p {
-            color: #666;
-        }
 
-        /* =========================
-           ปุ่มไปหน้าผลงาน
-        ========================= */
+.nav-menu a.active {
 
-        .next {
-            text-align: center;
-            margin: 40px 0 15px;
-        }
+    background: #ffb6d5;
 
-        .next a {
-            display: inline-block;
-            padding: 15px 32px;
-            border-radius: 30px;
-            background: linear-gradient(90deg, #8edcff, #ff9fc6);
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 17px;
-            box-shadow: 0 7px 18px rgba(220,150,190,0.25);
-            transition: 0.3s;
-        }
+    color: white;
+}
 
-        .next a:hover {
-            transform: scale(1.05);
-        }
 
-        footer {
-            text-align: center;
-            padding: 25px;
-            color: #76a6b9;
-        }
+/* =========================
+   หน้าเว็บการศึกษา
+========================= */
 
-        /* =========================
-           โทรศัพท์
-        ========================= */
+.education {
 
-        @media (max-width: 700px) {
+    min-height: 100vh;
 
-            nav {
-                flex-direction: column;
-                gap: 12px;
-            }
+    padding: 110px 20px 60px;
 
-            .menu {
-                justify-content: center;
-            }
+    text-align: center;
 
-            .university-grid {
-                grid-template-columns: 1fr;
-            }
+    position: relative;
 
-            .header h1 {
-                font-size: 30px;
-            }
+    overflow: hidden;
+}
 
-        }
 
-    </style>
+.title {
+
+    color: #69aeca;
+
+    font-size: 38px;
+
+    margin-bottom: 8px;
+}
+
+
+.subtitle {
+
+    color: #ed91b3;
+
+    font-size: 18px;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================
+   ของตกแต่ง
+========================= */
+
+.decor {
+
+    position: absolute;
+
+    font-size: 30px;
+
+    animation:
+        floating 4s ease-in-out infinite;
+}
+
+
+.d1 {
+
+    top: 18%;
+
+    left: 7%;
+}
+
+
+.d2 {
+
+    top: 35%;
+
+    right: 7%;
+
+    animation-delay: 1s;
+}
+
+
+.d3 {
+
+    bottom: 15%;
+
+    left: 10%;
+
+    animation-delay: 2s;
+}
+
+
+.d4 {
+
+    bottom: 18%;
+
+    right: 10%;
+
+    animation-delay: 1.5s;
+}
+
+
+/* =========================
+   กล่องหลัก
+========================= */
+
+.education-card {
+
+    width: min(950px, 95%);
+
+    margin: auto;
+
+    padding: 35px;
+
+    background: rgba(255,255,255,0.88);
+
+    border: 3px solid white;
+
+    border-radius: 35px;
+
+    box-shadow:
+        0 15px 40px rgba(130,180,215,0.25);
+
+    animation: appear 0.8s ease;
+}
+
+
+/* =========================
+   หัวข้อในกล่อง
+========================= */
+
+.card-title {
+
+    color: #ed8eb1;
+
+    font-size: 27px;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   Timeline
+========================= */
+
+.timeline {
+
+    border-left: 4px solid #ffb6d5;
+
+    padding-left: 28px;
+
+    text-align: left;
+
+    margin-bottom: 30px;
+}
+
+
+.timeline-item {
+
+    position: relative;
+
+    margin-bottom: 28px;
+
+    background: #f8fcff;
+
+    border: 2px solid #e2f4fc;
+
+    border-radius: 22px;
+
+    padding: 20px;
+
+    transition: 0.3s;
+}
+
+
+.timeline-item:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 8px 20px rgba(150,190,220,0.18);
+}
+
+
+.timeline-item::before {
+
+    content: "♡";
+
+    position: absolute;
+
+    left: -43px;
+
+    top: 20px;
+
+    width: 28px;
+
+    height: 28px;
+
+    border-radius: 50%;
+
+    background: #8edcff;
+
+    color: white;
+
+    text-align: center;
+
+    line-height: 28px;
+}
+
+
+.timeline-item h3 {
+
+    color: #ee91b5;
+
+    font-size: 21px;
+
+    margin-bottom: 10px;
+}
+
+
+.timeline-item p {
+
+    color: #777;
+
+    line-height: 1.8;
+
+}
+
+
+/* =========================
+   ชื่อโรงเรียน
+========================= */
+
+.school-name {
+
+    color: #69aeca;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   แผนการเรียน
+========================= */
+
+.study-plan {
+
+    margin-top: 18px;
+
+    padding: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e5f8ff,
+            #fff0f7
+        );
+
+    border-radius: 20px;
+
+    border: 2px solid white;
+}
+
+
+.study-plan h4 {
+
+    color: #69aeca;
+
+    font-size: 17px;
+
+    margin-bottom: 5px;
+}
+
+
+/* =========================
+   มหาวิทยาลัย
+========================= */
+
+.university-box {
+
+    margin-top: 30px;
+
+    padding: 25px;
+
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff0f7,
+            #e5f8ff
+        );
+
+    border: 3px solid #ffb5d3;
+
+    transition: 0.3s;
+}
+
+
+.university-box:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 10px 25px rgba(150,190,220,0.18);
+}
+
+
+/* =========================
+   ตรามหาวิทยาลัย
+========================= */
+
+.university-logo {
+
+    width: 80px;
+
+    height: 80px;
+
+    object-fit: contain;
+
+    display: block;
+
+    margin: 0 auto 12px;
+}
+
+
+.university-name {
+
+    color: #ed8eb1;
+
+    font-size: 22px;
+
+    margin-bottom: 15px;
+}
+
+
+.university-box p {
+
+    line-height: 1.8;
+
+    color: #666;
+}
+
+
+/* =========================
+   ป้ายเป้าหมาย
+========================= */
+
+.badge {
+
+    display: inline-block;
+
+    margin-top: 15px;
+
+    padding: 7px 15px;
+
+    border-radius: 25px;
+
+    background: #d8f4ff;
+
+    color: #5898b4;
+
+    font-size: 14px;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   เป้าหมาย
+========================= */
+
+.goal {
+
+    margin-top: 25px;
+
+    padding: 22px;
+
+    border-radius: 25px;
+
+    background: #f8fcff;
+
+    border: 2px solid #e2f4fc;
+}
+
+
+.goal h3 {
+
+    color: #ee91b5;
+
+    margin-bottom: 10px;
+}
+
+
+.goal p {
+
+    color: #777;
+
+    line-height: 1.8;
+}
+
+
+/* =========================
+   ปุ่มหน้าถัดไป
+========================= */
+
+.next-btn {
+
+    display: inline-block;
+
+    margin-top: 30px;
+
+    padding: 13px 28px;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f3a1c0,
+            #83cbe8
+        );
+
+    box-shadow:
+        0 7px 18px rgba(150,190,220,0.25);
+
+    transition: 0.3s;
+}
+
+
+.next-btn:hover {
+
+    transform: scale(1.06);
+}
+
+
+/* =========================
+   Animation
+========================= */
+
+@keyframes floating {
+
+    0%,100% {
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+
+    50% {
+
+        transform:
+            translateY(-20px)
+            rotate(8deg);
+    }
+
+}
+
+
+@keyframes appear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(35px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+}
+
+
+/* =========================
+   มือถือ
+========================= */
+
+@media (max-width:700px) {
+
+    .navbar {
+
+        height: auto;
+
+        padding: 10px;
+
+        flex-direction: column;
+
+        gap: 5px;
+    }
+
+
+    .nav-logo {
+
+        font-size: 16px;
+    }
+
+
+    .nav-menu {
+
+        gap: 2px;
+
+        width: 100%;
+
+        justify-content: center;
+    }
+
+
+    .nav-menu a {
+
+        font-size: 11px;
+
+        padding: 7px 5px;
+    }
+
+
+    .education {
+
+        padding-top: 135px;
+    }
+
+
+    .title {
+
+        font-size: 30px;
+    }
+
+
+    .education-card {
+
+        padding: 25px 18px;
+    }
+
+
+    .timeline {
+
+        padding-left: 20px;
+    }
+
+
+    .timeline-item::before {
+
+        left: -35px;
+    }
+
+
+    .university-logo {
+
+        width: 70px;
+
+        height: 70px;
+    }
+
+}
+
+</style>
+
 </head>
 
 
@@ -304,132 +672,107 @@
 
 
 <!-- =========================
-     NAVIGATION
+     แถบเมนู
 ========================= -->
+
 <nav class="navbar">
 
-  <div class="nav-logo">
-    🧸 My Portfolio
-  </div>
+    <div class="nav-logo">
+        🧸 My Portfolio
+    </div>
 
-  <div class="nav-menu">
 
-    <a href="index.html">
-      🏠 หน้าแรก
-    </a>
+    <div class="nav-menu">
 
-    <a href="me.html">
-      🌷 เกี่ยวกับฉัน
-    </a>
+        <a href="index.html">
+            🏠 หน้าแรก
+        </a>
 
-    <a href="activities.html">
-      👩🏻‍🎓 การศึกษา
-    </a>
-    
-<a href="works.html">
-      🏆 ผลงาน
 
-    <a href="contact.html">
-      📞 ติดต่อฉัน
-    </a>
+        <a href="me.html">
+            🌷 เกี่ยวกับฉัน
+        </a>
 
-  </div>
+
+        <a href="activities.html" class="active">
+            👩🏻‍🎓 การศึกษา
+        </a>
+
+
+        <a href="works.html">
+            🏆 ผลงาน
+        </a>
+
+
+        <a href="contact.html">
+            📞 ติดต่อฉัน
+        </a>
+
+    </div>
 
 </nav>
 
-    <style>
 
-.menu {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    gap: 5px;
-    padding: 12px 5px;
-    background: white;
-    flex-wrap: nowrap;
-}
 
-.menu a {
-    flex: 1;
-    text-decoration: none;
-    color: #69a9c2;
-    font-size: 16px;
-    font-weight: bold;
-    text-align: center;
-    line-height: 1.4;
-    white-space: normal;
-}
-
-.menu a:hover {
-    color: #e58bb2;
-}
-
-/* =========================
-   มือถือ
-========================= */
-
-@media (max-width: 600px) {
-
-    .menu {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        align-items: center;
-        gap: 2px;
-        padding: 10px 3px;
-    }
-
-    .menu a {
-        font-size: 14px;
-        flex: 1;
-        white-space: normal;
-    }
-
-}
-
-    </style>
-    
 <!-- =========================
-     CONTENT
+     หน้าเว็บการศึกษา
 ========================= -->
 
-<main class="container">
+<section class="education">
+
+
+    <!-- ของตกแต่ง -->
+
+    <div class="decor d1">
+        🌸
+    </div>
+
+
+    <div class="decor d2">
+        💗
+    </div>
+
+
+    <div class="decor d3">
+        🎀
+    </div>
+
+
+    <div class="decor d4">
+        🧸
+    </div>
+
 
 
     <!-- หัวข้อ -->
 
-    <div class="header">
+    <h1 class="title">
+        📚 ประวัติการศึกษา 📚
+    </h1>
 
-        <div class="decor">
-            ✦ 💗 🩵 🎀 🍯 🩵 💗 ✦
-        </div>
 
-        <div class="bear">
-            🧸
-        </div>
+    <p class="subtitle">
+        เส้นทางการเรียนรู้ของฉัน ✨
+    </p>
 
-        <h1>
-            ประวัติการศึกษา
-        </h1>
-
-        <p>
-            เส้นทางการเรียนรู้ของฉัน 📚✨
-        </p>
-
-    </div>
 
 
     <!-- =========================
-         ประวัติการศึกษา
+         กล่องหลัก
     ========================= -->
 
-    <section class="education-card">
+    <div class="education-card">
 
-        <h2>
-            📚 ประวัติการศึกษาของฉัน
+
+        <h2 class="card-title">
+            🌷 ประวัติการศึกษาของฉัน 🌷
         </h2>
+
+
+
+        <!-- =========================
+             Timeline
+        ========================= -->
 
         <div class="timeline">
 
@@ -439,22 +782,32 @@
             <div class="timeline-item">
 
                 <h3>
-                    🩵 มัธยมศึกษาตอนต้น
+                    🩵 มัธยมศึกษาตอนต้น ม.1 – ม.3
                 </h3>
 
-                <p>
-                    ศึกษาระดับมัธยมศึกษาตอนต้นปีที่1-3
-                    ณ <span class="school-name">
-                    โรงเรียนบ้านบึงอุตสาหกรรมนุเคราะห์
-                    </span>
-                </p>
-<div class="study-plan">
 
-                    <h3>
-                       🇬🇧 🇨🇳 แผนการเรียนอังกฤษ-จีน
-                    </h3>
-        </p>
+                <p>
+
+                    ศึกษาระดับมัธยมศึกษาตอนต้นปีที่ 1–3
+                    ณ
+
+                    <span class="school-name">
+                        โรงเรียนบ้านบึงอุตสาหกรรมนุเคราะห์
+                    </span>
+
+                </p>
+
+
+                <div class="study-plan">
+
+                    <h4>
+                        🇬🇧 🇨🇳 แผนการเรียนอังกฤษ-จีน
+                    </h4>
+
+                </div>
+
             </div>
+
 
 
             <!-- ม.ปลาย -->
@@ -462,89 +815,126 @@
             <div class="timeline-item">
 
                 <h3>
-                    💗 มัธยมศึกษาตอนปลาย
+                    💗 มัธยมศึกษาตอนปลาย ม.4 – ม.6
                 </h3>
 
+
                 <p>
-                    ปัจจุบันกำลังศึกษาระดับมัธยมศึกษาตอนปลายปีที่4-6
-                    ณ <span class="school-name">
-                    โรงเรียนบ้านบึงอุตสาหกรรมนุเคราะห์
+
+                    ปัจจุบันกำลังศึกษาระดับมัธยมศึกษาตอนปลายปีที่ 4–6
+                    ณ
+
+                    <span class="school-name">
+                        โรงเรียนบ้านบึงอุตสาหกรรมนุเคราะห์
                     </span>
+
                 </p>
 
 
                 <div class="study-plan">
 
-                    <h3>
+                    <h4>
                         🇨🇳 แผนการเรียนภาษาจีน
-                    </h3>
-
-                    </p>
+                    </h4>
 
                 </div>
 
             </div>
+                    <!-- =========================
+             มหาวิทยาลัย
+        ========================= -->
 
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================
-         มหาวิทยาลัย
-    ========================= -->
-
-    <section class="education-card">
-
-        <h2>
+        <h2 class="card-title">
             🎓 คณะและมหาวิทยาลัยที่อยากเข้าศึกษาต่อ
         </h2>
 
+
         <p>
-            ในอนาคตฉันมีความสนใจศึกษาต่อในด้านการศึกษาสายครูและภาษาจีน
+            ในอนาคตฉันมีความสนใจศึกษาต่อในด้านการศึกษาสายครูและภาษาจีน 💗
         </p>
 
 
-        <div class="university-grid">
+
+        <!-- มศว -->
+
+        <div class="university-box">
 
 
-            <!-- มศว -->
+            <!-- ตรามหาวิทยาลัย -->
 
-            <div class="university-card main-target">
+            <img
+                src="https://raw.githubusercontent.com/s34490/images/main/Screenshot_20260915-165649_Google.jpg"
+                alt="ตรามหาวิทยาลัยศรีนครินทรวิโรฒ"
+                class="university-logo"
+            >
+
+
+            <h3 class="university-name">
+                มหาวิทยาลัยศรีนครินทรวิโรฒ
+            </h3>
+
+
+            <p>
+
+                <b>คณะที่สนใจ</b>
+                <br>
+
+                คณะศึกษาศาสตร์ / คณะมนุษยศาสตร์
+                สาขาภาษาจีน
+
+            </p>
+
+
+            <span class="badge">
+                ⭐ มหาวิทยาลัยเป้าหมาย
+            </span>
+
+        </div>
+
+
+
+        <!-- =========================
+             เป้าหมาย
+        ========================= -->
+
+        <div class="goal">
+
+            <h3>
+                🌈 เป้าหมายในการศึกษาต่อ
+            </h3>
+
+
+            <p>
+   ฉันตั้งใจพัฒนาความรู้และความสามารถของตนเอง
+                เพื่อเข้าศึกษาต่อในมหาลัยและคณะที่ใฝ่ฝัน
+                พัฒนาตัวเองให้ประสบความสำเร็จและมีอาชีพที่มั่นคง
+                เพื่อดูแลครอบครัวได้💗
+
+            </p>
                 
-                 <!-- ตรามหาวิทยาลัย -->
-<img src="https://raw.githubusercontent.com/s34490/images/main/Screenshot_20260915-165649_Google.jpg"
-     alt="ตรามหาวิทยาลัยศรีนครินทรวิโรฒ"
-     class="university-logo">
-                <style>
-.university-logo {
-    width: 80px;
-    height: 80px;
-    object-fit: contain;
-    display: block;
-    margin: 0 auto 10px;
-}
-                </style>
 
-                <h3>
-                     มหาวิทยาลัยศรีนครินทรวิโรฒ
-                </h3>
+        </div>
 
-                    <b>คณะที่สนใจ</b><br>
-   คณะศึกษาศาสตร์/คณะมนุษย์ศาสตร์ สาขาภาษาจีน
-                    
-  <!-- =========================
-         ปุ่มหน้าถัดไป
-    ========================= -->
 
-    <div class="next">
 
-        <a href="works.html">
-            🏆 ไปหน้าการเสนอผลงาน →
+        <!-- =========================
+             ปุ่มไปหน้าผลงาน
+        ========================= -->
+
+        <a
+            href="works.html"
+            class="next-btn"
+        >
+            🏆 ดูผลงานของฉัน →
         </a>
+
 
     </div>
 
+</section>
+
+
 </body>
-    </html>
+
+</html>
+เพื่อเข้าศึกษาต่อในคณะและสาขาที่ใฝ่ฝันอเข้าศึกษาต่อในคณะและสาขาที่ใฝ่ฝันอเข้าศึกษาต่อในคณะและสาขาที่ใฝ่ฝันามมั่นคง
