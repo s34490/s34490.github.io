@@ -1,432 +1,514 @@
-หน้ากิจกรรมของฉัน
+หน้าการศึกษาของฉัน
 <!DOCTYPE html>
 <html lang="th">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>กิจกรรม | My Portfolio</title>
-
-    <link rel="stylesheet" href="style.css">
+    <title>ประวัติการศึกษา | My Portfolio</title>
 
     <style>
-        /* =========================
-           พื้นฐาน
-        ========================= */
+
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
         }
 
         body {
-            font-family: Arial, Tahoma, sans-serif;
-            background: linear-gradient(135deg, #dff6ff, #fff0f8);
-            color: #666;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #dff6ff, #ffe4f0);
+            color: #555;
         }
 
         /* =========================
-           แถบเมนู
+           แถบเมนูด้านบน
         ========================= */
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
 
+        nav {
+            background: rgba(255,255,255,0.95);
+            padding: 15px 6%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-
-            padding: 14px 35px;
-
-            background: rgba(255, 255, 255, 0.93);
-            backdrop-filter: blur(10px);
-
-            box-shadow: 0 4px 18px rgba(120, 180, 220, 0.18);
+            box-shadow: 0 3px 15px rgba(130,180,200,0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
         .logo {
-            color: #70afd0;
-            font-size: 20px;
+            font-size: 22px;
             font-weight: bold;
+            color: #ef83b1;
         }
 
         .menu {
             display: flex;
-            gap: 8px;
             list-style: none;
+            gap: 8px;
+            flex-wrap: wrap;
         }
 
         .menu a {
             text-decoration: none;
-            color: #69aeca;
-            font-weight: bold;
-
+            color: #555;
             padding: 9px 14px;
-            border-radius: 25px;
-
+            border-radius: 20px;
             transition: 0.3s;
         }
 
-        .menu a:hover {
-            background: #ffe1ee;
-            color: #ed83aa;
-            transform: translateY(-3px);
+        .menu a:hover,
+        .menu a.active {
+            background: #ffb6d5;
+            color: white;
         }
 
         /* =========================
-           หน้า กิจกรรม
+           ส่วนหัว
         ========================= */
-        .activities-page {
-            min-height: 100vh;
-            padding: 130px 25px 70px;
 
-            background:
-                radial-gradient(circle at 10% 15%, white 0 3%, transparent 4%),
-                radial-gradient(circle at 90% 80%, white 0 4%, transparent 5%),
-                linear-gradient(135deg, #dff6ff, #fff0f8);
+        .container {
+            width: 90%;
+            max-width: 1050px;
+            margin: auto;
+            padding: 45px 0;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 35px;
         }
 
         .decor {
-            text-align: center;
-            font-size: 25px;
-            margin-bottom: 12px;
-        }
-
-        .page-title {
-            text-align: center;
-            color: #6baecb;
-            font-size: 38px;
-            margin-bottom: 10px;
-        }
-
-        .page-title span {
-            color: #ed8eb1;
-        }
-
-        .subtitle {
-            text-align: center;
-            color: #888;
-            font-size: 17px;
-            margin-bottom: 40px;
-        }
-
-        /* =========================
-           กล่องกิจกรรม
-        ========================= */
-        .activity-container {
-            max-width: 1100px;
-            margin: auto;
-
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
-        }
-
-        .activity-card {
-            background: rgba(255, 255, 255, 0.88);
-
-            border: 3px solid white;
-            border-radius: 28px;
-
-            padding: 18px;
-
-            box-shadow: 0 12px 30px rgba(130, 180, 215, 0.22);
-
-            transition: 0.3s;
-        }
-
-        .activity-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 18px 35px rgba(130, 180, 215, 0.3);
-        }
-
-        /* =========================
-           รูปกิจกรรม
-        ========================= */
-        .activity-image {
-            width: 100%;
-            height: 250px;
-
-            overflow: hidden;
-            border-radius: 20px;
-
-            background: #e9f8ff;
-        }
-
-        .activity-image img {
-            width: 100%;
-            height: 100%;
-
-            object-fit: cover;
-
-            display: block;
-
-            transition: 0.4s;
-        }
-
-        .activity-card:hover .activity-image img {
-            transform: scale(1.05);
-        }
-
-        /* =========================
-           ข้อความ
-        ========================= */
-        .activity-title {
-            color: #e98faf;
-            font-size: 21px;
-            font-weight: bold;
-
-            margin-top: 16px;
+            font-size: 22px;
             margin-bottom: 8px;
         }
 
-        .activity-text {
-            color: #777;
-            line-height: 1.7;
+        .bear {
+            font-size: 58px;
+        }
+
+        .header h1 {
+            font-size: 38px;
+            color: #ef83b1;
+            margin: 8px 0;
+        }
+
+        .header p {
+            color: #6da9c3;
+            font-size: 17px;
+        }
+
+        /* =========================
+           กล่องประวัติการศึกษา
+        ========================= */
+
+        .education-card {
+            background: rgba(255,255,255,0.95);
+            border-radius: 28px;
+            padding: 28px;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 20px rgba(120,170,190,0.18);
+            border: 3px solid #e4f7ff;
+        }
+
+        .education-card h2 {
+            color: #ef83b1;
+            font-size: 25px;
+            margin-bottom: 15px;
+        }
+
+        .education-card p {
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        .school-name {
+            color: #65a6c0;
+            font-weight: bold;
+        }
+
+        /* =========================
+           แผนการเรียน
+        ========================= */
+
+        .study-plan {
+            margin-top: 18px;
+            padding: 20px;
+            border-radius: 22px;
+            background: linear-gradient(135deg, #e5f8ff, #fff0f7);
+        }
+
+        .study-plan h3 {
+            color: #69a9c3;
+            margin-bottom: 10px;
+        }
+
+        /* =========================
+           Timeline
+        ========================= */
+
+        .timeline {
+            border-left: 4px solid #ffb6d5;
+            padding-left: 25px;
+            margin-top: 10px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+        .timeline-item::before {
+            content: "♡";
+            position: absolute;
+            left: -43px;
+            top: 0;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: #8edcff;
+            color: white;
+            text-align: center;
+            line-height: 28px;
+        }
+
+        .timeline-item h3 {
+            color: #ef83b1;
+            margin-bottom: 5px;
+        }
+
+        /* =========================
+           มหาวิทยาลัย
+        ========================= */
+
+        .university-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+            margin-top: 20px;
+        }
+
+        .university-card {
+            padding: 20px;
+            border-radius: 22px;
+            background: linear-gradient(135deg, #fefcff, #ecfaff);
+            border: 2px solid #dff4ff;
+            transition: 0.3s;
+        }
+
+        .university-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .university-card h3 {
+            color: #ef83b1;
+            margin-bottom: 10px;
+        }
+
+        .university-card p {
             font-size: 15px;
+            line-height: 1.7;
+        }
+
+        .main-target {
+            border: 3px solid #ffb5d3;
+        }
+
+        .badge {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 5px 13px;
+            border-radius: 20px;
+            background: #d8f4ff;
+            color: #5898b4;
+            font-size: 13px;
+        }
+
+        /* =========================
+           เป้าหมาย
+        ========================= */
+
+        .goal {
+            text-align: center;
+            background: linear-gradient(135deg, #fff0f7, #e5f8ff);
+        }
+
+        .goal p {
+            color: #666;
         }
 
         /* =========================
            ปุ่มไปหน้าผลงาน
         ========================= */
-        .next-box {
+
+        .next {
             text-align: center;
-            margin-top: 45px;
+            margin: 40px 0 15px;
         }
 
-        .next-button {
+        .next a {
             display: inline-block;
-
-            text-decoration: none;
-            color: white;
-
-            background: linear-gradient(135deg, #f3a1c0, #83cbe8);
-
-            padding: 14px 30px;
-
+            padding: 15px 32px;
             border-radius: 30px;
-
+            background: linear-gradient(90deg, #8edcff, #ff9fc6);
+            color: white;
+            text-decoration: none;
             font-weight: bold;
-
-            box-shadow: 0 8px 20px rgba(150, 190, 220, 0.3);
-
+            font-size: 17px;
+            box-shadow: 0 7px 18px rgba(220,150,190,0.25);
             transition: 0.3s;
         }
 
-        .next-button:hover {
-            transform: scale(1.07);
+        .next a:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: #76a6b9;
         }
 
         /* =========================
-           มือถือ
+           โทรศัพท์
         ========================= */
+
         @media (max-width: 700px) {
 
-            .navbar {
+            nav {
                 flex-direction: column;
-                gap: 8px;
-                padding: 12px 10px;
-            }
-
-            .logo {
-                font-size: 17px;
+                gap: 12px;
             }
 
             .menu {
-                gap: 2px;
-                flex-wrap: wrap;
                 justify-content: center;
             }
 
-            .menu a {
-                font-size: 11px;
-                padding: 7px 8px;
-            }
-
-            .activities-page {
-                padding-top: 150px;
-            }
-
-            .page-title {
-                font-size: 29px;
-            }
-
-            .subtitle {
-                font-size: 14px;
-            }
-
-            .activity-container {
+            .university-grid {
                 grid-template-columns: 1fr;
             }
 
-            .activity-image {
-                height: 220px;
+            .header h1 {
+                font-size: 30px;
             }
+
         }
+
     </style>
 </head>
 
+
 <body>
 
-    <!-- =========================
-         แถบเมนู
-    ========================= -->
-    <nav class="navbar">
 
-        <div class="logo">
-            🌿 My Portfolio 🐒
-        </div>
+<!-- =========================
+     NAVIGATION
+========================= -->
 
-        <ul class="menu">
+<nav>
 
-            <li>
-                <a href="index.html">🏠 หน้าแรก</a>
-            </li>
+    <div class="logo">
+        🎀 My Portfolio 🧸
+    </div>
 
-            <li>
-                <a href="about.html">👩🏻‍🎓 เกี่ยวกับฉัน</a>
-            </li>
+    <ul class="menu">
 
-            <li>
-                <a href="about.html">🎓 การศึกษา</a>
-            </li>
+        <li>
+            <a href="index.html">
+                🏠 หน้าแรก
+            </a>
+        </li>
 
-            <li>
-                <a href="activities.html">✨ กิจกรรม</a>
-            </li>
+        <li>
+            <a href="about.html">
+                👩🏻‍🎓 เกี่ยวกับฉัน
+            </a>
+        </li>
 
-            <li>
-                <a href="contact.html">💌 ติดต่อฉัน</a>
-            </li>
+        <li>
+            <a href="education.html" class="active">
+                📚 การศึกษา
+            </a>
+        </li>
 
-        </ul>
+        <li>
+            <a href="activities.html">
+                🎀 กิจกรรม
+            </a>
+        </li>
 
-    </nav>
+        <li>
+            <a href="works.html">
+                🏆 ผลงาน
+            </a>
+        </li>
+
+    </ul>
+
+</nav>
 
 
-    <!-- =========================
-         หน้า กิจกรรม
-    ========================= -->
-    <section class="activities-page">
+<!-- =========================
+     CONTENT
+========================= -->
+
+<main class="container">
+
+
+    <!-- หัวข้อ -->
+
+    <div class="header">
 
         <div class="decor">
-            🩷 ✨ 🧸 🌷 🎀 🌿 ✨ 🩷
+            ✦ 💗 🩵 🧸 🎀 🍯 🧸 🩵 💗 ✦
         </div>
 
-        <h1 class="page-title">
-            ✨ <span>กิจกรรมของฉัน</span> ✨
+        <div class="bear">
+            🧸
+        </div>
+
+        <h1>
+            ประวัติการศึกษา
         </h1>
 
-        <p class="subtitle">
-            รวมกิจกรรมและประสบการณ์ที่ฉันได้เข้าร่วม 💕
+        <p>
+            เส้นทางการเรียนรู้ของฉัน 📚✨
+        </p>
+
+    </div>
+
+
+    <!-- =========================
+         ประวัติการศึกษา
+    ========================= -->
+
+    <section class="education-card">
+
+        <h2>
+            📚 ประวัติการศึกษาของฉัน
+        </h2>
+
+        <div class="timeline">
+
+
+            <!-- ม.ต้น -->
+
+            <div class="timeline-item">
+
+                <h3>
+                    🩵 มัธยมศึกษาตอนต้น
+                </h3>
+
+                <p>
+                    ศึกษาระดับมัธยมศึกษาตอนต้น1-3
+                    ณ <span class="school-name">
+                    โรงเรียนบ้านบึงอุตสาหกรรมนุเคราะห์
+                    </span>
+                </p>
+<div class="study-plan">
+
+                    <h3>
+                        🇨🇳 แผนการเรียนภาษาจีน
+                    </h3>
+            </div>
+
+
+            <!-- ม.ปลาย -->
+
+            <div class="timeline-item">
+
+                <h3>
+                    💗 มัธยมศึกษาตอนปลาย
+                </h3>
+
+                <p>
+                    ปัจจุบันกำลังศึกษาระดับมัธยมศึกษาตอนปลาย4-6
+                    ณ <span class="school-name">
+                    โรงเรียนบ้านบึงอุตสาหกรรมนุเคราะห์
+                    </span>
+                </p>
+
+
+                <div class="study-plan">
+
+                    <h3>
+                        🇨🇳 แผนการเรียนภาษาจีน
+                    </h3>
+
+                    <p>
+                        ศึกษาในแผนการเรียนภาษาจีน
+                        โดยเน้นพัฒนาทักษะการฟัง พูด อ่าน
+                        และเขียนภาษาจีน รวมถึงการนำภาษาไปใช้
+                        ในการสื่อสารในชีวิตประจำวัน
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         มหาวิทยาลัย
+    ========================= -->
+
+    <section class="education-card">
+
+        <h2>
+            🎓 คณะและมหาวิทยาลัยที่อยากเข้าศึกษาต่อ
+        </h2>
+
+        <p>
+            ในอนาคตฉันมีความสนใจศึกษาต่อในด้านการศึกษา
+            โดยเฉพาะสายครูและภาษาจีน
         </p>
 
 
-        <!-- =========================
-             การ์ดกิจกรรม
-        ========================= -->
-        <div class="activity-container">
+        <div class="university-grid">
 
 
-            <!-- กิจกรรมที่ 1 -->
-            <div class="activity-card">
+            <!-- มศว -->
 
-                <div class="activity-image">
-                    <img src="activity1.jpg" alt="กิจกรรมระบำจีน">
-                </div>
+            <div class="university-card main-target">
 
-                <h2 class="activity-title">
-                    🐉 การแข่งขันระบำจีน
-                </h2>
+                <h3>
+                    💗 มหาวิทยาลัยศรีนครินทรวิโรฒ
+                </h3>
 
-                <p class="activity-text">
-                    เข้าร่วมการแข่งขันระบำจีน
-                    ได้ฝึกฝนทักษะด้านการเต้น การทำงานเป็นทีม
-                    และการแสดงออกบนเวที
-                </p>
+                    <b>คณะที่สนใจ</b><br>
+            คณะศึกษาศาสตร์
+                <p>
+                      <!-- =========================
+         ปุ่มหน้าถัดไป
+    ========================= -->
 
-            </div>
+    <div class="next">
 
+        <a href="works.html">
+            🏆 ไปหน้าการเสนอผลงาน →
+        </a>
 
-            <!-- กิจกรรมที่ 2 -->
-            <div class="activity-card">
-
-                <div class="activity-image">
-                    <img src="activity2.jpg" alt="กิจกรรมร้องเพลงจีน">
-                </div>
-
-                <h2 class="activity-title">
-                    🎤 การร้องเพลงภาษาจีน
-                </h2>
-
-                <p class="activity-text">
-                    เข้าร่วมกิจกรรมการร้องเพลงภาษาจีน
-                    ได้พัฒนาทักษะการออกเสียง
-                    และการสื่อสารภาษาจีน
-                </p>
-
-            </div>
+    </div>
 
 
-            <!-- กิจกรรมที่ 3 -->
-            <div class="activity-card">
-
-                <div class="activity-image">
-                    <img src="activity3.jpg" alt="กิจกรรม TO BE NUMBER ONE">
-                </div>
-
-                <h2 class="activity-title">
-                    💃 TO BE NUMBER ONE
-                </h2>
-
-                <p class="activity-text">
-                    เข้าร่วมกิจกรรม TO BE NUMBER ONE
-                    และการเต้น Dancercise
-                    ได้ฝึกความกล้าแสดงออกและการทำงานร่วมกับผู้อื่น
-                </p>
-
-            </div>
+</main>
 
 
-            <!-- กิจกรรมที่ 4 -->
-            <div class="activity-card">
+<footer>
 
-                <div class="activity-image">
-                    <img src="activity4.jpg" alt="กิจกรรมจิตอาสา">
-                </div>
+    🧸 My Portfolio 💗🩵  
+    <br>
+    Made with love 🎀
 
-                <h2 class="activity-title">
-                    🌷 กิจกรรมจิตอาสา
-                </h2>
-
-                <p class="activity-text">
-                    มีส่วนร่วมในการช่วยจัดบูธงานวิชาการ
-                    ได้ฝึกการทำงานร่วมกับผู้อื่น
-                    และมีความรับผิดชอบต่อหน้าที่
-                </p>
-
-            </div>
+</footer>
 
 
-            <!-- กิจกรรมที่ 5 -->
-            <div class="activity-card">
-
-                <div class="activity-image">
-                    <img src="activity5.jpg" alt="ค่ายคุณธรรม">
-                </div>
-
-                <h2 class="activity-title">
-                    🕊️ ค่ายคุณธรรม
-                </h2>
-
-                <p class="activity-text">
-                    เข้าร่วมค่ายคุณธรรมในฐานะตัวแทนห้อง
-                    ได้เรียนรู้เรื่องความรับผิดชอบ
-                    ระเบียบวินัย และการอยู่ร่วมกับผู้อื่น
-                    <a href="works.html" class="next-button">
-    🏆 ดูผลงานของฉัน →
-                    </a>
+</body>
+            </html>
