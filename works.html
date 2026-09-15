@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>ผลงาน | My Portfolio</title>
 
     <style>
+
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: "Arial", "Tahoma", sans-serif;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
         }
 
         body {
@@ -19,58 +21,51 @@
             color: #555;
         }
 
+
         /* =========================
            แถบเมนูด้านบน
         ========================= */
+
         nav {
+            width: 100%;
+            background: white;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            gap: 5px;
+            padding: 12px 5px;
+            box-shadow: 0 3px 15px rgba(130,180,200,0.2);
             position: sticky;
             top: 0;
             z-index: 100;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 14px 5%;
-            background: rgba(255, 255, 255, 0.93);
-            box-shadow: 0 4px 15px rgba(120, 170, 200, 0.15);
         }
 
-        .logo {
-            color: #e77fa5;
-            font-size: 20px;
-            font-weight: bold;
-            white-space: nowrap;
-        }
-
-        .menu {
-            display: flex;
-            list-style: none;
-            gap: 8px;
-            flex-wrap: nowrap;
-        }
-
-        .menu li {
-            white-space: nowrap;
-        }
-
-        .menu a {
-            display: block;
+        nav a {
+            flex: 1;
             text-decoration: none;
-            color: #666;
-            padding: 9px 13px;
-            border-radius: 22px;
-            font-size: 14px;
+            color: #69a9c2;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 1.4;
+            white-space: normal;
+            padding: 9px 5px;
+            border-radius: 20px;
             transition: 0.3s;
         }
 
-        .menu a:hover,
-        .menu a.active {
-            background: #ffd8e7;
-            color: #e56f98;
+        nav a:hover,
+        nav a.active {
+            color: white;
+            background: #ffb6d5;
         }
+
 
         /* =========================
            เนื้อหา
         ========================= */
+
         .container {
             width: 90%;
             max-width: 1100px;
@@ -78,64 +73,80 @@
             padding: 45px 0;
         }
 
+
+        /* =========================
+           ส่วนหัว
+        ========================= */
+
         .header {
             text-align: center;
             margin-bottom: 35px;
         }
 
         .decor {
-            font-size: 24px;
+            font-size: 22px;
             margin-bottom: 8px;
         }
 
         .bear {
-            font-size: 55px;
-            margin-bottom: 5px;
+            font-size: 58px;
         }
 
-        h1 {
-            color: #e47da3;
+        .header h1 {
             font-size: 38px;
-            margin-bottom: 8px;
+            color: #ef83b1;
+            margin: 8px 0;
         }
 
-        .subtitle {
-            color: #65afd0;
+        .header p {
+            color: #6da9c3;
             font-size: 17px;
         }
 
+
         /* =========================
-           หัวข้อ
+           กล่องแต่ละหัวข้อ
         ========================= */
-        .section-title {
+
+        .work-section {
+            background: rgba(255,255,255,0.95);
+            border-radius: 28px;
+            padding: 28px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 20px rgba(120,170,190,0.18);
+            border: 3px solid #e4f7ff;
+        }
+
+        .work-section h2 {
+            color: #ef83b1;
+            font-size: 25px;
+            margin-bottom: 10px;
             text-align: center;
-            margin: 40px 0 25px;
         }
 
-        .section-title h2 {
-            display: inline-block;
-            padding: 12px 28px;
-            border-radius: 30px;
-            background: rgba(255,255,255,0.85);
-            color: #e2769d;
-            box-shadow: 0 5px 15px rgba(130,170,190,0.15);
+        .section-text {
+            text-align: center;
+            margin-bottom: 25px;
+            line-height: 1.8;
         }
+
 
         /* =========================
-           กิจกรรม 9 รายการ
+           กิจกรรม 9 รูป
         ========================= */
+
         .activity-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 22px;
+            gap: 20px;
         }
 
         .activity-card {
-            background: rgba(255,255,255,0.92);
-            border-radius: 23px;
-            padding: 15px;
-            border: 2px solid #e7f7ff;
-            box-shadow: 0 7px 22px rgba(120,170,200,0.16);
+            background: linear-gradient(135deg, #fefcff, #ecfaff);
+            border: 2px solid #dff4ff;
+            border-radius: 22px;
+            padding: 12px;
+            text-align: center;
             transition: 0.3s;
         }
 
@@ -145,41 +156,41 @@
 
         .activity-card img {
             width: 100%;
-            height: 210px;
+            height: 200px;
             object-fit: cover;
-            border-radius: 17px;
+            border-radius: 16px;
             display: block;
-            margin-bottom: 13px;
+            margin-bottom: 12px;
         }
 
         .activity-card h3 {
-            color: #e2769d;
-            font-size: 18px;
-            margin-bottom: 7px;
+            color: #ef83b1;
+            font-size: 17px;
+            margin-bottom: 6px;
         }
 
         .activity-card p {
-            color: #666;
-            line-height: 1.6;
             font-size: 14px;
+            line-height: 1.6;
         }
 
+
         /* =========================
-           เกียรติบัตร 5 รายการ
+           ผลงาน / เกียรติบัตร 5 รูป
         ========================= */
+
         .certificate-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 22px;
+            gap: 20px;
         }
 
         .certificate-card {
-            background: rgba(255,255,255,0.92);
-            border-radius: 23px;
-            padding: 15px;
+            background: linear-gradient(135deg, #fff0f7, #e9f9ff);
+            border: 2px solid #ffd9e8;
+            border-radius: 22px;
+            padding: 12px;
             text-align: center;
-            border: 2px solid #ffe1ed;
-            box-shadow: 0 7px 22px rgba(120,170,200,0.16);
             transition: 0.3s;
         }
 
@@ -191,34 +202,38 @@
             width: 100%;
             height: 220px;
             object-fit: contain;
-            background: #f8fcff;
-            border-radius: 15px;
+            background: white;
+            border-radius: 16px;
             display: block;
             margin-bottom: 12px;
         }
 
         .certificate-card h3 {
-            color: #66afd0;
+            color: #69a9c3;
             font-size: 16px;
+            line-height: 1.5;
         }
 
+
         /* =========================
-           ปุ่มหน้าถัดไป
+           ปุ่มหน้าต่อไป
         ========================= */
+
         .next {
             text-align: center;
-            margin: 50px 0 15px;
+            margin: 40px 0 15px;
         }
 
         .next a {
             display: inline-block;
-            text-decoration: none;
-            color: white;
-            font-weight: bold;
-            padding: 14px 30px;
+            padding: 15px 32px;
             border-radius: 30px;
-            background: linear-gradient(90deg, #83d4ee, #f298bb);
-            box-shadow: 0 7px 18px rgba(220,140,170,0.25);
+            background: linear-gradient(90deg, #8edcff, #ff9fc6);
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 17px;
+            box-shadow: 0 7px 18px rgba(220,150,190,0.25);
             transition: 0.3s;
         }
 
@@ -226,283 +241,388 @@
             transform: scale(1.05);
         }
 
+
         /* =========================
            Footer
         ========================= */
+
         footer {
             text-align: center;
             padding: 25px;
-            background: rgba(255,255,255,0.55);
-            color: #777;
+            color: #76a6b9;
         }
+
 
         /* =========================
-           มือถือ
+           โทรศัพท์
         ========================= */
-        @media (max-width: 900px) {
 
-            nav {
-                overflow-x: auto;
-                justify-content: flex-start;
-                gap: 15px;
+        @media (max-width: 700px) {
+
+            nav a {
+                font-size: 13px;
+                padding: 8px 3px;
             }
 
-            .menu {
-                flex-shrink: 0;
+            .container {
+                width: 94%;
             }
 
-            .activity-grid,
-            .certificate-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .header h1 {
+                font-size: 30px;
             }
-        }
-
-        @media (max-width: 600px) {
 
             .activity-grid,
             .certificate-grid {
                 grid-template-columns: 1fr;
             }
 
-            h1 {
-                font-size: 30px;
-            }
-
-            .logo {
-                font-size: 17px;
-            }
-
-            .menu a {
-                font-size: 12px;
-                padding: 7px 9px;
-            }
         }
+
     </style>
 </head>
 
+
 <body>
 
-    <!-- =========================
-         แถบเมนู
-    ========================= -->
-    <nav>
 
-        <div class="logo">
-             🧸 My Portfolio 
-        </div>
+<!-- =========================
+     แถบเมนู
+========================= -->
 
-        <nav class="menu">
-  <a href="index.html">🏠 หน้าแรก</a>
-  <a href="me.html">🌷 เกี่ยวกับฉัน</a>
-  <a href="activities.html">👩🏻‍🎓 การศึกษา</a>
-  <a href="works.html">🏆 ผลงาน</a>
-  <a href="contact.html">📞 ติดต่อฉัน</a>
+<nav>
+
+    <a href="index.html">
+        🏠 หน้าแรก
+    </a>
+
+    <a href="me.html">
+        🌷 เกี่ยวกับฉัน
+    </a>
+
+    <a href="activities.html">
+        👩🏻‍🎓 การศึกษา
+    </a>
+
+    <a href="works.html" class="active">
+        🏆 ผลงาน
+    </a>
+
+    <a href="contact.html">
+        📞 ติดต่อฉัน
+    </a>
+
 </nav>
-        <style>
 
-.menu {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    gap: 5px;
-    padding: 12px 5px;
-    background: white;
-    flex-wrap: nowrap;
-}
 
-.menu a {
-    flex: 1;
-    text-decoration: none;
-    color: #69a9c2;
-    font-size: 16px;
-    font-weight: bold;
-    text-align: center;
-    line-height: 1.4;
-    white-space: normal;
-}
+<!-- =========================
+     CONTENT
+========================= -->
 
-.menu a:hover {
-    color: #e58bb2;
-}
+<main class="container">
 
-/* =========================
-   มือถือ
-========================= */
 
-@media (max-width: 600px) {
+    <!-- ส่วนหัว -->
 
-    .menu {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        align-items: center;
-        gap: 2px;
-        padding: 10px 3px;
-    }
+    <div class="header">
 
-    .menu a {
-        font-size: 14px;
-        flex: 1;
-        white-space: normal;
-    }
+        <div class="decor">
+            ✦ 💗 🩵 🎀 🍯 🩵 💗 ✦
+        </div>
 
-}
+        <div class="bear">
+            🧸
+        </div>
 
-        </style>
+        <h1>
+            ผลงานและกิจกรรม
+        </h1>
+
+        <p>
+            ประสบการณ์และผลงานที่ฉันภาคภูมิใจ 🏆✨
+        </p>
+
+    </div>
+
 
 
     <!-- =========================
-         เนื้อหา
+         กิจกรรม
     ========================= -->
-    <main class="container">
 
-        <div class="header">
+    <section class="work-section">
 
-            <div class="decor">
-                ✦ 💗 🩵 🎀 🍯 🩵 💗 ✦
-            </div>
+        <h2>
+            🎀 กิจกรรมที่เข้าร่วม
+        </h2>
 
-            <div class="bear">
-                🧸
-            </div>
+        <p class="section-text">
+            กิจกรรมต่าง ๆ ที่ได้เข้าร่วมและช่วยพัฒนาทักษะของฉัน
+        </p>
 
-            <h1>
-                กิจกรรมและผลงาน
-            </h1>
-
-            <p class="subtitle">
-                ประสบการณ์และผลงานที่ฉันภาคภูมิใจ ✨
-            </p>
-
-        </div>
-
-
-        <!-- =========================
-             กิจกรรม
-        ========================= -->
-        <div class="section-title">
-            <h2>🎀 กิจกรรมที่เข้าร่วม</h2>
-        </div>
 
         <div class="activity-grid">
 
+
             <!-- กิจกรรม 1 -->
+
             <div class="activity-card">
+
                 <img src="activity1.jpg" alt="กิจกรรมที่ 1">
-                <h3>🇨🇳 การแข่งขันระบำจีน</h3>
-                <p>เข้าร่วมการแข่งขันระบำจีน ฝึกการแสดงและการทำงานเป็นทีม</p>
+
+                <h3>
+                    🇨🇳 การแข่งขันระบำจีน
+                </h3>
+
+                <p>
+                    ฝึกการแสดงและการทำงานเป็นทีม
+                </p>
+
             </div>
+
 
             <!-- กิจกรรม 2 -->
+
             <div class="activity-card">
+
                 <img src="activity2.jpg" alt="กิจกรรมที่ 2">
-                <h3>🎶 Chinese Choir</h3>
-                <p>เข้าร่วมกิจกรรมร้องเพลงภาษาจีนและพัฒนาทักษะการสื่อสาร</p>
+
+                <h3>
+                    🎶 Chinese Choir
+                </h3>
+
+                <p>
+                    ฝึกทักษะการร้องเพลงภาษาจีน
+                </p>
+
             </div>
+
 
             <!-- กิจกรรม 3 -->
+
             <div class="activity-card">
+
                 <img src="activity3.jpg" alt="กิจกรรมที่ 3">
-                <h3>💃 TO BE NUMBER ONE</h3>
-                <p>เข้าร่วมกิจกรรม Dancercise ฝึกความกล้าแสดงออกและการทำงานร่วมกัน</p>
+
+                <h3>
+                    💃 TO BE NUMBER ONE
+                </h3>
+
+                <p>
+                    กิจกรรม Dancercise และการแสดง
+                </p>
+
             </div>
+
 
             <!-- กิจกรรม 4 -->
+
             <div class="activity-card">
+
                 <img src="activity4.jpg" alt="กิจกรรมที่ 4">
-                <h3>🌷 กิจกรรมจิตอาสา</h3>
-                <p>ช่วยเหลืองานส่วนรวมและเรียนรู้การทำงานร่วมกับผู้อื่น</p>
+
+                <h3>
+                    🌷 กิจกรรมจิตอาสา
+                </h3>
+
+                <p>
+                    ช่วยเหลืองานส่วนรวม
+                </p>
+
             </div>
+
 
             <!-- กิจกรรม 5 -->
+
             <div class="activity-card">
+
                 <img src="activity5.jpg" alt="กิจกรรมที่ 5">
-                <h3>📚 งานวิชาการ</h3>
-                <p>เข้าร่วมกิจกรรมด้านวิชาการและช่วยจัดบูธงานวิชาการของโรงเรียน</p>
+
+                <h3>
+                    📚 กิจกรรมวิชาการ
+                </h3>
+
+                <p>
+                    เข้าร่วมกิจกรรมด้านวิชาการ
+                </p>
+
             </div>
+
 
             <!-- กิจกรรม 6 -->
+
             <div class="activity-card">
+
                 <img src="activity6.jpg" alt="กิจกรรมที่ 6">
-                <h3>🏫 กิจกรรมโรงเรียน</h3>
-                <p>มีส่วนร่วมในกิจกรรมต่าง ๆ ของโรงเรียนและทำงานร่วมกับเพื่อน</p>
+
+                <h3>
+                    🏫 กิจกรรมโรงเรียน
+                </h3>
+
+                <p>
+                    มีส่วนร่วมในกิจกรรมของโรงเรียน
+                </p>
+
             </div>
+
 
             <!-- กิจกรรม 7 -->
+
             <div class="activity-card">
+
                 <img src="activity7.jpg" alt="กิจกรรมที่ 7">
-                <h3>🎤 กิจกรรมการแสดง</h3>
-                <p>ฝึกทักษะการแสดงและการนำเสนอ รวมถึงความมั่นใจบนเวที</p>
+
+                <h3>
+                    🎤 กิจกรรมการแสดง
+                </h3>
+
+                <p>
+                    ฝึกความกล้าแสดงออก
+                </p>
+
             </div>
-          
+
+
             <!-- กิจกรรม 8 -->
+
             <div class="activity-card">
+
                 <img src="activity8.jpg" alt="กิจกรรมที่ 8">
-                <h3>🤝 กิจกรรมทำงานเป็นทีม</h3>
-                <p>เรียนรู้การแบ่งหน้าที่ ความรับผิดชอบ และการทำงานร่วมกับผู้อื่น</p>
+
+                <h3>
+                    🤝 การทำงานเป็นทีม
+                </h3>
+              <p>
+                    ฝึกการทำงานร่วมกับผู้อื่น
+                </p>
+
             </div>
+
 
             <!-- กิจกรรม 9 -->
+
             <div class="activity-card">
+
                 <img src="activity9.jpg" alt="กิจกรรมที่ 9">
-                <h3>✨ กิจกรรมพัฒนาตนเอง</h3>
-                <p>เข้าร่วมกิจกรรมเพื่อพัฒนาความสามารถและประสบการณ์ของตนเอง</p>
+
+                <h3>
+                    ✨ กิจกรรมพัฒนาตนเอง
+                </h3>
+
+                <p>
+                    พัฒนาความรู้และความสามารถ
+                </p>
+
             </div>
 
+
         </div>
 
+    </section>
 
-        <!-- =========================
-             เกียรติบัตร
-        ========================= -->
-        <div class="section-title">
-            <h2>🏆 ผลงานและเกียรติบัตร</h2>
-        </div>
+
+
+    <!-- =========================
+         ผลงาน / เกียรติบัตร
+    ========================= -->
+
+    <section class="work-section">
+
+        <h2>
+            🏆 ผลงานและเกียรติบัตร
+        </h2>
+
+        <p class="section-text">
+            ผลงานและเกียรติบัตรที่ได้รับจากกิจกรรมและการเรียนรู้
+        </p>
+
 
         <div class="certificate-grid">
 
+
             <!-- เกียรติบัตร 1 -->
+
             <div class="certificate-card">
+
                 <img src="certificate1.jpg" alt="เกียรติบัตรที่ 1">
-                <h3>🏅 เกียรติบัตรการแข่งขันระบำจีน</h3>
+
+                <h3>
+                    🏅 เกียรติบัตรการแข่งขันระบำจีน
+                </h3>
+
             </div>
+
 
             <!-- เกียรติบัตร 2 -->
+
             <div class="certificate-card">
+
                 <img src="certificate2.jpg" alt="เกียรติบัตรที่ 2">
-                <h3>📜 เกียรติบัตรด้านภาษาจีน</h3>
+
+                <h3>
+                    📜 เกียรติบัตรด้านภาษาจีน
+                </h3>
+
             </div>
+
 
             <!-- เกียรติบัตร 3 -->
+
             <div class="certificate-card">
+
                 <img src="certificate3.jpg" alt="เกียรติบัตรที่ 3">
-                <h3>🌟 เกียรติบัตรกิจกรรม</h3>
+
+                <h3>
+                    🌟 เกียรติบัตรกิจกรรม
+                </h3>
+
             </div>
+
 
             <!-- เกียรติบัตร 4 -->
+
             <div class="certificate-card">
+
                 <img src="certificate4.jpg" alt="เกียรติบัตรที่ 4">
-                <h3>📚 เกียรติบัตรการอบรม</h3>
+
+                <h3>
+                    📚 เกียรติบัตรการอบรม
+                </h3>
+
             </div>
+
 
             <!-- เกียรติบัตร 5 -->
+
             <div class="certificate-card">
+
                 <img src="certificate5.jpg" alt="เกียรติบัตรที่ 5">
-                <h3>💗 เกียรติบัตรผลงาน</h3>
+
+                <h3>
+                    💗 เกียรติบัตรผลงาน
+                </h3>
+
             </div>
 
-        </div>
-
-
-        <!-- =========================
-             ปุ่มไปหน้าติดต่อฉัน
-        ========================= -->
-        <div class="next">
-
-            <a href="contact.html">
-                💌 ไปหน้าติดต่อฉัน →
-            </a>
 
         </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         ปุ่มไปหน้าติดต่อฉัน
+    ========================= -->
+
+    <div class="next">
+
+        <a href="contact.html">
+            📞 ไปหน้าติดต่อฉัน →
+        </a>
+
+    </div>
+
+
+</main>
+      
